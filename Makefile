@@ -1,0 +1,4 @@
+all:
+	git pull
+	hugo
+
