@@ -3,11 +3,9 @@ title = "Linux内核之旅"
 theme = "hugo-universal-theme"
 themesDir = "./themes/"
 languageCode = "zh"
+hasCJKLanguage = true
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "zh"
-hasCJKLanguage = true
-# Enable comments by entering your Disqus shortname
-#disqusShortname = "devcows"
 
 pygmentsUseClasses = false
 pygmentCodeFences = true
@@ -23,7 +21,7 @@ pygmentCodeFences = true
             unsafe = true
 
 # Define the number of posts per page
-paginate = 10
+paginate = 15
 
 [menu]
 
