@@ -1,43 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Blogs on Linux内核之旅</title>
-    <link>https://example.org/blog/</link>
-    <description>Recent content in Blogs on Linux内核之旅</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 10 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://example.org/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>“tcp丢包分析”实验解析(一)--proc文件系统</title>
-      <link>https://example.org/blog/2020/04/10/tcp%E4%B8%A2%E5%8C%85%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C%E8%A7%A3%E6%9E%90%E4%B8%80-proc%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</link>
-      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.org/blog/2020/04/10/tcp%E4%B8%A2%E5%8C%85%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C%E8%A7%A3%E6%9E%90%E4%B8%80-proc%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</guid>
-      <description>tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析，本文由戴君毅整理，梁金荣编辑,贺东升校对。
- 最初开发 /proc 文件系统是为了提供有关系统中进程的信息。但是这个文件系统非常有用， /proc 文件系统包含了一些目录（用作组织信息的方式）和虚拟文件。虚拟文件可以向用户呈现内核中的一些信息，也可以用作一种从用户空间向内核发送信息的手段。
-/proc文件系统可以为提供很多信息， 在左边是一系列数字编号，每个实际上都是一个目录，表示系统中的一个进程。由于在Linux中创建的第一个进程是 init 进程，因此它的 process-id 为 1。
-右边的目录包含特定信息，比如cpuinfo包含了CPU的信息，modules包含了内核模块的信息。
-为了解决一些实际问题，我们需要在/proc下创建条目捕获信息，使用文件系统通用方法肯定是不行的，需要使用相关API编写内核模块来实现。
-在做谢宝友老师写的“TCP丢包分析”实验里，首先就会在/proc下创建条目，较为简单，先来看init和exit：
-static int drop_packet_init(void){int ret;struct proc_dir_entry *pe;proc_mkdir(&amp;#34;mooc&amp;#34;, NULL);proc_mkdir(&amp;#34;mooc/net&amp;#34;, NULL);ret = -ENOMEM;pe = proc_create(&amp;#34;mooc/net/drop-packet&amp;#34;,S_IFREG | 0644,NULL,&amp;amp;drop_packet_fops);if (!pe)goto err_proc;printk(&amp;#34;drop-packet loaded.\n&amp;#34;);return 0;err_proc:return ret;}static void drop_packet_exit(void){remove_proc_entry(&amp;#34;mooc/net/drop-packet&amp;#34;, NULL);remove_proc_entry(&amp;#34;mooc/net&amp;#34;, NULL);remove_proc_entry(&amp;#34;mooc&amp;#34;, NULL);printk(&amp;#34;drop-packet unloaded.\n&amp;#34;);}框架还是比较清晰的，需要深入源码来感受一下，第一部分代码：
-*struct proc_dir_entry pe;</description>
-    </item>
-    
-    <item>
-      <title>“tcp丢包分析”实验解析(二)--kprobe和tracepoint</title>
-      <link>https://example.org/blog/2020/04/10/tcp%E4%B8%A2%E5%8C%85%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C%E8%A7%A3%E6%9E%90%E4%BA%8C-kprobe%E5%92%8Ctracepoint/</link>
-      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.org/blog/2020/04/10/tcp%E4%B8%A2%E5%8C%85%E5%88%86%E6%9E%90%E5%AE%9E%E9%AA%8C%E8%A7%A3%E6%9E%90%E4%BA%8C-kprobe%E5%92%8Ctracepoint/</guid>
-      <description>tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析，本文由戴君毅整理，梁金荣编辑，贺东升校对。
- 继续顺下实验代码，前面说过，我们需要为我们（在proc文件系统中）加入的条目编写操作集接口：
-const struct file_operations drop_packet_fops = {.open = drop_packet_open,.read = seq_read,.llseek = seq_lseek,.write = drop_packet_write,.release = single_release,};实验的运行逻辑重点落在了write操作的实现中：
-static ssize_t drop_packet_write(struct file *file,const char __user *buf, size_t count, loff_t *offs){int ret;char cmd[255];char chr[255];if (count &amp;lt; 1 || *offs)return -EINVAL;if (copy_from_user(chr, buf, 255))return -EFAULT;ret = sscanf(chr, &amp;#34;%255s&amp;#34;, cmd);if (ret &amp;lt;= 0)return -EINVAL;if (strcmp(cmd, &amp;#34;activate&amp;#34;) == 0) {if (!</description>
-    </item>
-    
-  </channel>
-</rss>
