@@ -33,7 +33,7 @@ Linux内核之旅社区是由西邮陈莉君教授创建，我们致力于传播
 
 ## 社区委员会
 
-![社区成员.png](http://ww1.sinaimg.cn/large/005NFTS2ly1gdommlut7kj30xw0h0myu.jpg)
+![社区成员.png](/img/members.png)
 
 ## 联系方式
 邮箱：liangjinrong111@163.com
