@@ -1,0 +1,12 @@
+weight: 1
+title: "《Linux内核分析与应用》开课啦！"
+description: >
+  <ul class="list-style-none">
+    <li>陈莉君教授主讲的Linux内核精品课程</li>
+    <li>机制与策略分离为指导思想</li>
+    <li>分析Linux内核的设计思想和数据结构</li>
+    <li>编写Linux内核模块并分析源代码</li>
+    <li>内核专家谢宝友老师和一线工程师张天飞参与</li>
+  </ul>
+
+image: "img/carousel/学堂在线.png"

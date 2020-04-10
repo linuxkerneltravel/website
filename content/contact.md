@@ -1,0 +1,42 @@
++++
+title = "关于"
+id = "contact"
++++
+
+## 关于Linux内核之旅社区
+Linux内核之旅社区是由西邮陈莉君教授创建，我们致力于传播开源文化，教授Linux内核知识。目前我们有五大平台，包括Linux内核之旅网站、GitHub、微信公众号“Linux内核之旅”、学堂在线mooc和bilibili内核视频站。
+
+也许在我们的课程里，就有下一站的方向。 愿你活出自己想要的模样，永远保持骄傲。 --陈莉君教授
+
+## 我们的目标
+1. 开源文化传播
+2. 内核知识教学
+3. Linux知识传播
+
+## 我们的平台
+1. linuxkerneltravel公众号平台：传播媒介
+- 定期推送linux内核相关的文章
+- 大家的成果展示平台
+2. linuxkerneltravel网站：文章内容输出平台
+- 社区内容承输出点
+- 学习周报
+- 文章翻译
+3. linuxkerneltravel的github社区：协作平台
+- 社区&网站代码协作平台
+- 文章&代码&项目开发协作平台
+4. 学堂在线mooc：内核课程输出平台
+- 内核知识教学
+- 讨论区答疑
+5. bilibili视频网站：管理内核学习视频
+- 分享内核知识
+- 管理大家平时录制的内核学习视频
+
+## 社区委员会
+
+![社区成员.png](http://ww1.sinaimg.cn/large/005NFTS2ly1gdommlut7kj30xw0h0myu.jpg)
+
+## 联系方式
+邮箱：liangjinrong111@163.com
+
+
+微信公众号：Linux内核之旅
