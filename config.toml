@@ -1,4 +1,4 @@
-baseurl = "https://example.org"
+baseurl = "http://kerneltravel.net/"
 title = "Linux内核之旅"
 theme = "hugo-universal-theme"
 themesDir = "./themes/"
