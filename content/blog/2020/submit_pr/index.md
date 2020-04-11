@@ -44,14 +44,16 @@ helightxu$ git remote add dev https://github.com/helight/website-linuxkerneltrav
 ```
 
 ### 4.新建分支，并且在新分支上修改提交代码
-1. 在每次新建分支之前一定要执行 git pull，是的 master 分支保持最新。
+#### 4.1 代码更新
+
+在每次新建分支之前一定要执行 git pull，是的 master 分支保持最新。
 ```sh
 helightxu$ git pull 
 helightxu$ git checkout -b pr_intro
 Switched to a new branch 'pr_intro'
 helightxu$ 
 ```
-2. 编辑开发
+#### 4.2 编辑开发
 这里以 hugo 新建一个博文为例进行介绍。首先使用下面的命令新建一个 markdown 文件。
 ```sh
 helightxu$ hugo new blog/2020/submit_pr/index.md                          ✔   pr_intro
@@ -59,13 +61,18 @@ helightxu$ hugo new blog/2020/submit_pr/index.md                          ✔
 helightxu$
 ```
 然后进行博文撰写，撰写格式要求：
-   1. 必须按照 `/blog/20xx/英文文章名称/index.md` 的路径格式创建文章。英文文章名称使用英文字母、下划线、连字符和数字，其它字符不接受
-   2. 要求的内容格式一定是 markdown 的，其它格式内容暂时不接受。
-   3. 使用的图片一律保存在和 markdown 文件同级目录下的 imgs 文件夹中，如：`/blog/2020/submit_pr/imgs/pr.png`。
-   4. 图片的名称也一律使用英文命名，规则和上面一致。图片宽度不要超过900的宽度
 
-3. 编辑完成之后进行本地验证
-这一步非常重要，一定要进行本地验证，避免文章有 markdown 语法、图片格式、文字错误等。所以一定要验证。
+     1. 必须按照 `/blog/20xx/英文文章名称/index.md` 的路径格式创建文章。英文文章名称使用英文字母、下划线、连字符和数字，其它字符不接受。
+   
+     2. 要求的内容格式一定是 markdown 的，其它格式内容暂时不接受。
+   
+     3. 使用的图片一律保存在和 markdown 文件同级目录下的 imgs 文件夹中，如：`/blog/2020/submit_pr/imgs/pr.png`。
+   
+     4. 图片的名称也一律使用英文命名，规则和上面一致。图片宽度不要超过900的宽度
+
+
+#### 4.3 编辑完成之后进行本地验证
+这一步**非常重要**，一定要进行本地验证，避免文章有 markdown 语法、图片格式、文字错误等。所以一定要验证。
 ```sh
 helightxu$ hugo server
                    | ZH   
@@ -89,7 +96,8 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 看到上面信息就可以在本地浏览器中预览站点，看撰写的文字是否符合自己的预期。如果有问题可以修改后直接刷新看效果。
-4. 编辑本体验证没有问题之后做本地提交。
+
+#### 4.4 编辑本体验证没有问题之后做本地提交。
 ```sh
  helightxu$ git add content/blog/2020/submit_pr
  helightxu$ git commit -m "add new blog submit_pr" -a  
@@ -100,7 +108,10 @@ Press Ctrl+C to stop
  helightxu$ 
  ``` 
 
-### 5.提交代码到 dev 上游仓库，这个 dev 就是上面设置的
+### 5.提交代码到 dev 上游仓库
+这个 dev 上游就是上面设置的哈：git remote add dev https://github.com/helight/website-linuxkerneltravel
+
+这种设置方式是可以把本地的修改按照 `dev` 标签提交到指定的另外一个仓库。我们一般是以主仓库作为我们工作目录，但是从主仓库的 `master` 分支创建出来的开发分支是不可以提交主仓库的，所以个人仓库就是这个分支提交的地方，提交之后在在个人仓库的分支和主仓库的 `master` 分支创建 `pr`。
 ```sh
 helightxu$ git push dev   
 Enumerating objects: 13, done.
@@ -124,7 +135,7 @@ helightxu$
 ### 6.创建pr
 在自己的个人仓库 [https://github.com/helight/website-linuxkerneltravel](https://github.com/helight/website-linuxkerneltravel) 上面可以直接看到创建 pr 的按钮，直接创建就好了。
 
-    创建 pr 之后，后面有修改直接提交到这个个人分支上就可以了，不用重复创建。
+    创建 `pr` 之后，后面有修改直接提交到这个个人分支上就可以了，不用重复创建。
 
 ### 7.等待 reviewer 反馈和合并到主干
 社区的管理员会对你提交的 pr 进行 review，review 后会提出修改点，或者 review 没有问题直接合到主干中。
