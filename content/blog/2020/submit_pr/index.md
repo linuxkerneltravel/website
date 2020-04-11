@@ -60,9 +60,34 @@ helightxu$
    1. 必须按照 `/blog/20xx/英文文章名称/index.md` 的路径格式创建文章。英文文章名称使用英文字母、下划线、连字符和数字，其它字符不接受
    2. 要求的内容格式一定是 markdown 的，其它格式内容暂时不接受。
    3. 使用的图片一律保存在和 markdown 文件同级目录下的 imgs 文件夹中，如：`/blog/2020/submit_pr/imgs/pr.png`。
-   4. 图片的名称也一律使用英文命名，规则和上面一致。
+   4. 图片的名称也一律使用英文命名，规则和上面一致。图片宽度不要超过900的宽度
 
-1. 编辑完成之后做本地提交。
+3. 编辑完成之后进行本地验证
+这一步非常重要，一定要进行本地验证，避免文章有 markdown 语法、图片格式、文字错误等。所以一定要验证。
+```sh
+helightxu$ hugo server
+                   | ZH   
+-------------------+------
+  Pages            |  18  
+  Paginator pages  |   0  
+  Non-page files   |   5  
+  Static files     | 121  
+  Processed images |   0  
+  Aliases          |   6  
+  Sitemaps         |   1  
+  Cleaned          |   0  
+
+Built in 132 ms
+Watching for changes in /Users/helightxu/helight_doc/website-linuxkerneltravel/{archetypes,content,data,static,themes}
+Watching for config changes in /Users/helightxu/helight_doc/website-linuxkerneltravel/config.toml
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+```
+看到上面信息就可以在本地浏览器中预览站点，看撰写的文字是否符合自己的预期。如果有问题可以修改后直接刷新看效果。
+4. 编辑本体验证没有问题之后做本地提交。
 ```sh
  helightxu$ git add content/blog/2020/submit_pr
  helightxu$ git commit -m "add new blog submit_pr" -a  
@@ -72,6 +97,7 @@ helightxu$
  create mode 100644 content/blog/2020/submit_pr/index.md
  helightxu$ 
  ``` 
+
 ### 5.提交代码到 dev 上游仓库，这个 dev 就是上面设置的
 ```sh
 helightxu$ git push dev   
