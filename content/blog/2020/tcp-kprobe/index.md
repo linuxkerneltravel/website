@@ -2,9 +2,9 @@
 title = "“tcp丢包分析”实验解析(二)--kprobe和tracepoint"
 date = "2020-04-10T13:47:08+02:00"
 categories = ["Linux内核试验"]
-description = "tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析，本文由戴君毅整理，梁金荣编辑，贺东升校对。"
 banner = "img/banners/“tcp丢包分析”实验解析(二).png"
 summary = "tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析，本文由戴君毅整理，梁金荣编辑,贺东升校对。"
+
 +++
 
 > tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析，本文由戴君毅整理，梁金荣编辑，贺东升校对。
@@ -105,7 +105,7 @@ static int activate_drop_packet(void)
 
 那么到底什么是tracepoint？kprobe又是什么？说它们之前不得不说一下ftrace。ftrace(function trace)是利用gcc 编译器在编译时在每个函数的入口地址放置一个 probe 点，这个 probe 点会调用一个 probe 函数，这样这个probe 函数会对每个执行的内核函数进行跟踪并打印日志到`ring buffer`中，而用户可以通过 debugfs 来访问`ring buffer`中的内容。
 
-![1.png](http://ww1.sinaimg.cn/large/005NFTS2ly1gdiy3ytzn8j309z041gln.jpg)
+![1.png](img/1.png)
 
 kprobe 是很早前就存在于内核中的一种动态 trace 工具。kprobe 本身利用了 int 3（在 x86 中）实现了 probe 点（对应图中的A）。使用 kprobe 需要用户自己实现 kernel module 来注册 probe 函数。kprobe 并没有统一的B、C 和 D。使用起来用户需要自己实现很多东西，不是很灵活。而在 `function trace` 出现后，kprobe 借用了它的一部分设计模式，实现了统一的 probe 函数（对应于图中的 B），并利用了 `function trace` 的环形缓存和用户接口部分，也就是 C 和 D 部分功能。
 
@@ -256,5 +256,5 @@ Tracepoint相对简单一点，实验里直接调用了`tracepoint_probe_registe
 
 值得一提的是，实验代码为tracepoint设置了条件宏以便适应不同的内核版本，比较有意思，这里给出结构大家感受一下：
 
-![2.png](http://ww1.sinaimg.cn/large/005NFTS2ly1gdj02e2t18j307f06dq48.jpg)
+![2.png](img/2.png)
 

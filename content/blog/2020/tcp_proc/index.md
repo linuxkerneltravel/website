@@ -2,10 +2,9 @@
 title = "“tcp丢包分析”实验解析(一)--proc文件系统"
 date = "2020-04-10T13:47:08+02:00"
 categories = ["Linux内核试验"]
-subtitle = "tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析"
-description = "tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析，本文由戴君毅整理，梁金荣编辑,贺东升校对。"
 banner = "img/banners/“tcp丢包分析”实验解析(一).png"
 summary = "tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析，本文由戴君毅整理，梁金荣编辑,贺东升校对。"
+
 +++
 
 >tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析，本文由戴君毅整理，梁金荣编辑,贺东升校对。
@@ -14,11 +13,11 @@ summary = "tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈
 
 `/proc`文件系统可以为提供很多信息， 在左边是一系列数字编号，每个实际上都是一个目录，表示系统中的一个进程。由于在Linux中创建的第一个进程是 `init` 进程，因此它的 `process-id` 为 1。
 
-![1.png](http://ww1.sinaimg.cn/large/005NFTS2ly1gdftaoiatsj30fe05itaf.jpg)
+![1.png](img/1.png)
 
 右边的目录包含特定信息，比如`cpuinfo`包含了CPU的信息，`modules`包含了内核模块的信息。
 
-![2.png](http://ww1.sinaimg.cn/large/005NFTS2ly1gdftb9j3b9j30aj06u0t6.jpg)
+![2.png](img/2.png)
 
 为了解决一些实际问题，我们需要在`/proc`下创建条目捕获信息，使用文件系统通用方法肯定是不行的，需要使用相关API编写内核模块来实现。
 
@@ -137,9 +136,9 @@ static inline struct proc_dir_entry *PDE(const struct inode *inode)
 
 此时，我们可以想象以下模型：
 
-![3.png](http://ww1.sinaimg.cn/large/005NFTS2ly1gdgcfui6cvj30d106yt8u.jpg)
+![3.png](img/3.png)
 
-*第二部分代码是：*
+**第二部分代码是：**
 
 **proc_mkdir("mooc", NULL);**
 
@@ -292,13 +291,13 @@ static int drop_packet_open(struct inode *inode, struct file *filp)
 
 为什么这么做？内核文档给出了相关描述：
 
-![4.png](http://ww1.sinaimg.cn/large/005NFTS2ly1gdgdnk08oxj30ef07zq56.jpg)
+![4.png](img/4.png)
 
 https://www.kernel.org/doc/Documentation/filesystems/seq_file.txt
 
 你可能发现，内核文档里显示的是`seq_open`，而实验里是`single_open`，它们有什么区别呢？实际上内核文档的最后给出了答案：
 
-![5.png](http://ww1.sinaimg.cn/large/005NFTS2ly1gdgdrm8cifj30sg0ggabr.jpg)
+![5.png](img/5.png)
 
 谢宝友老师的实验中运用`seq_file`的极简版本（extra-simple version），只需定义一个`show()`函数。完整的情况我们还需要实现`start()`,`next()`等迭代器来对`seq_file`进行操作。极简版本中，`open`方法需要调用`single_open`，对应的，`release`方法调用`single_release`。
 
