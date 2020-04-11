@@ -11,7 +11,7 @@ draft: false
 Linux 内核之旅的网站我们重构了，这次使用了 github 管理，hugo 作为站点管理工具。目标是能够让更多的同学参与进来，学习，分享，共同建设，让大家更方便高效的走 Linux 内核之旅。
 
     “Linux内核之旅”网站的大幅度改版，更是为热爱开源的Linuxer提供更广的舞台，大家的周报告，分享视频，相关代码，点点滴滴都将会通过Linux内核之旅网站，公众号，学堂在线，Github 以及B 站等平台全面的分享出来。Open，Free&Share，不仅仅是一个口号，落地生花之时，也是一个人从内而外的成长之际。  -- 陈莉君教授。
-    
+
 所以这里也欢迎大家参与分享，这篇文章主要介绍怎么参与投稿。
 
 ## 投稿内容
@@ -32,7 +32,7 @@ https://github.com/helight/website-linuxkerneltravel
 
 
 ### 2.clone 主仓库到本地
-[git remote add dev https://github.com/helight/website-linuxkerneltravel](https://github.com/linuxkerneltravel/website)
+[https://github.com/linuxkerneltravel/website](https://github.com/linuxkerneltravel/website)
 
 ```sh
  helightxu$ git clone https://github.com/linuxkerneltravel/website
@@ -80,8 +80,8 @@ helightxu$ hugo server
   Cleaned          |   0  
 
 Built in 132 ms
-Watching for changes in /Users/helightxu/helight_doc/website-linuxkerneltravel/{archetypes,content,data,static,themes}
-Watching for config changes in /Users/helightxu/helight_doc/website-linuxkerneltravel/config.toml
+Watching for changes in /Users/helightxu/helight_doc/website/{archetypes,content,data,static,themes}
+Watching for config changes in /Users/helightxu/helight_doc/website/config.toml
 Environment: "development"
 Serving pages from memory
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
@@ -132,5 +132,5 @@ helightxu$
 另外如果提出问题，大家可以在这里讨论，并修改达成一致，并提交到这个分支上，最后再合到主干中。
 
 ## 总结
-以上简单说了我们社区文章提交的过程。希望大家多多参与共建《Linux 内核之旅》社区。
+以上简单说了我们社区文章投稿的过程。希望大家多多参与共建《Linux 内核之旅》社区。
 　
