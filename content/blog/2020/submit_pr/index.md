@@ -60,42 +60,49 @@ helightxu$
    1. 必须按照 `/blog/20xx/英文文章名称/index.md` 的路径格式创建文章。英文文章名称使用英文字母、下划线、连字符和数字，其它字符不接受
    2. 要求的内容格式一定是 markdown 的，其它格式内容暂时不接受。
    3. 使用的图片一律保存在和 markdown 文件同级目录下的 imgs 文件夹中，如：`/blog/2020/submit_pr/imgs/pr.png`。
+   4. 图片的名称也一律使用英文命名，规则和上面一致。
 
 1. 编辑完成之后做本地提交。
 ```sh
- $ git commit -m "add create pr" -a
- [add_creater_pr 6507547] add create pr
- 5 files changed, 53 insertions(+)
- create mode 100644 Create_pr.md
- create mode 100644 static/imgs/create_pr/fork_project1.png
- create mode 100644 static/imgs/create_pr/fork_project2.png
- create mode 100644 static/imgs/create_pr/fork_project3.png
- create mode 100644 static/imgs/create_pr/fork_project4.png
-提交代码到 dev 上游仓库，这个 dev 就是上面设置的
-$ git push dev                                                                   
- Enumerating objects: 11, done.
- Counting objects: 100% (11/11), done.
- Delta compression using up to 12 threads
- Compressing objects: 100% (8/8), done.
- Writing objects: 100% (10/10), 900.36 KiB | 20.01 MiB/s, done.
- Total 10 (delta 0), reused 0 (delta 0)
- remote: Processing changes: done
- remote: Updating references: 100% (1/1)
- To https://git.code.oa.com/helightxu/community
- * [new branch]      add_creater_pr -> add_creater_pr
-查看代码
-这里 add_creater_pr 这个分支就是刚刚提交的。
+ helightxu$ git add content/blog/2020/submit_pr
+ helightxu$ git commit -m "add new blog submit_pr" -a  
+ [pr_intro 7607f03] add new blog submit_pr
+ 2 files changed, 101 insertions(+)
+ create mode 100644 content/blog/2020/submit_pr/imgs/pr.png
+ create mode 100644 content/blog/2020/submit_pr/index.md
+ helightxu$ 
+ ``` 
+### 5.提交代码到 dev 上游仓库，这个 dev 就是上面设置的
+```sh
+helightxu$ git push dev   
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 376.97 KiB | 19.84 MiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'pr_intro' on GitHub by visiting:
+remote:      https://github.com/helight/website-linuxkerneltravel/pull/new/pr_intro
+remote: 
+To https://github.com/helight/website-linuxkerneltravel
+ * [new branch]      pr_intro -> pr_intro
+helightxu$
+```         
+接下来就可以在这里查看代码了：[https://github.com/helight/website-linuxkerneltravel](https://github.com/helight/website-linuxkerneltravel)。
+这里 `pr_intro` 这个分支就是刚刚提交的。
 
-创建pr
-在自己的仓库站点，这里和 github 不一样，一定注意，是在自己 fork 来的仓库，我这里是 https://git.code.oa.com/helightxu/community。
+### 6.创建pr
+在自己的个人仓库 [https://github.com/helight/website-linuxkerneltravel](https://github.com/helight/website-linuxkerneltravel) 上面可以直接看到创建 pr 的按钮，直接创建就好了。
 
-点击左边的 Merge Requests 菜单，进行创建
+    创建 pr 之后，后面有修改直接提交到这个个人分支上就可以了，不用重复创建。
 
-看下图，左边是源分支（也就是自己的仓库分支），右边是目标分支（也就是主仓库的master分支），再点左下角的 Compare branches 进行创建
+### 7.等待 reviewer 反馈和合并到主干
+社区的管理员会对你提交的 pr 进行 review，review 后会提出修改点，或者 review 没有问题直接合到主干中。
 
-这一步主要是信息确认和pr信息填写，这里主要是填写为什么要提交这个pr，主要功能是什么，解决什么问题，确认和填写完成之后，点击 Submit new merge request 进行创建。
+另外如果提出问题，大家可以在这里讨论，并修改达成一致，并提交到这个分支上，最后再合到主干中。
 
-创建后会直接转跳到主仓库的页面。
-
-接下来就等待reviewer反馈和合并到主干了。
+## 总结
+以上简单说了我们社区文章提交的过程。希望大家多多参与共建《Linux 内核之旅》社区。
 　
