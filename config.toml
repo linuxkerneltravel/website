@@ -1,4 +1,4 @@
-baseurl = "https://example.org"
+baseurl = "http://kerneltravel.net/"
 title = "Linux内核之旅"
 theme = "hugo-universal-theme"
 themesDir = "./themes/"
@@ -170,7 +170,7 @@ paginate = 15
     title = "和我一起学习Linux内核吧！"
     subtitle = "你可以在我们的GitHub上提交你的代码，也可以给我们的代码打补丁，在学堂在线mooc平台《Linux内核分析与应用》课程中抛出你的问题，就有机会获得陈莉君教授的答疑。 "
     link_url = "https://next.xuetangx.com/course/XIYOU08091001441/1516763"
-    link_text = "点击免费报名《Linux内核分析与应用》课程"
+    link_text = "免费报名《Linux内核分析与应用》课程"
 
 [params.clients]
     enable = false
