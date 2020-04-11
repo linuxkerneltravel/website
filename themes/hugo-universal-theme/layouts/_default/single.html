@@ -24,23 +24,81 @@
 
                     <div class="col-md-9" id="blog-post">
 
-                        {{ if or .Params.author .Params.date }}
-                          <p class="text-muted text-uppercase mb-small text-right">
-                            {{ if .Params.author }}{{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a>{{ end }}
-                            {{ if and .Params.author .Params.date }} | {{ end }}
-                            {{ if .Params.date }}{{ .Date.Format .Site.Params.date_format }}{{ end }}
-                          </p>
+                      <div class="well">
+                        <div class="author-category">
+                        <i class="fa fa-calendar-o">
+                        {{ .Date.Format .Site.Params.date_format }}
+                        </i>
+                        |
+                        <!-- show categories -->
+                        {{ if and (isset .Params "author") (isset .Params "authorlink") }}{{ i18n "authorBy" }} <a href="{{ .Params.authorlink }}">{{ .Params.author }}</a>
+                        {{ else if (isset .Params "author") }}{{ i18n "authorBy" }} {{ .Params.author }}
                         {{ end }}
+                        {{ if and (isset .Params "translator") (isset .Params "translatorlink") }}
+                        | {{ i18n "translator" }} <a href="{{ .Params.translatorlink }}">{{ .Params.translator }}</a>
+                        {{ else if isset .Params "translator" }}
+                        | {{ i18n "translator" }} {{ .Params.translator }}
+                        {{ end }}
+                        {{ if and (isset .Params "reviewer") (isset .Params "reviewerlink") }}
+                        | {{ i18n "reviewer" }}
+                        {{ range $index, $reviewer := .Params.reviewer }}
+                        <a href="{{ index $.Params.reviewerlink $index }}"><i>{{ index $.Params.reviewer $index }}</i></a>
+                        {{ end }}
+                        {{ else if isset .Params "reviewer" }}
+                        | {{ i18n "reviewer" }} {{ .Params.reviewer }}
+                        {{ end }}
+                        |
+                        {{ .FuzzyWordCount }}{{ i18n "words" }} | {{ i18n "readInAbout" }}{{ .ReadingTime }}{{ i18n "minute" }} |
 
-                        <div id="post-content">
-                          {{ .Content }}
-                        </div>
-                        <!-- /#post-content -->
-                        {{ if .Site.DisqusShortname }}
-                        <div id="comments">
-                            {{ template "_internal/disqus.html" . }}
+                        <!-- show categories -->
+                        {{ if isset .Params "categories" }}
+
+                        {{ if .Params.originallink }}
+                        <a href="{{ .Params.originallink }}">{{ i18n "originallink" }}</a>
+                        |
+                        {{ end }}
+                        {{ if gt (len .Params.categories) 0 }}
+                        {{ i18n "archivedIn" }} <a href="/categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a>
+                        {{ end }}
+                        |
+                        {{ end }}
+                        <!-- show tags -->
+                        {{ if .Params.tags }}
+                        标签
+                        {{ range .Params.tags }}
+                        <a style="text-transform:capitalize" href="{{ $.Site.LanguagePrefix | relURL }}tags/{{ . | urlize }}/"><i>#{{ . }}</i></a>
+                        {{ end }}
+                        
+                        {{ end }}
+                      </div>
+                        {{ if .Site.Params.share }}
+                        <div id="share">
+                        {{ partial "widgets/share.html" . }}
                         </div>
                         {{ end }}
+                    </div>
+                    <div id="post-content">
+                      {{ .Content }}
+                    </div>
+                    <!-- /#post-content -->
+                    {{ if .Site.Params.share }}
+                    <div id="share">
+                    {{ partial "widgets/share.html" . }}
+                    </div>
+                    {{ end }}
+                    <!-- page navigate -->
+                    <ul class="pager blog-pager">
+                    {{ if .PrevInSection }}
+                    <li class="previous">
+                    <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr; {{ i18n "previousPost" }}</a>
+                    </li>
+                    {{ end }} {{ if .NextInSection }}
+                    <li class="next">
+                    <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">{{ i18n "nextPost" }} &rarr;</a>
+                    </li>
+                    {{ end }}
+                    </ul>
+
 
                     </div>
                     <!-- /#blog-post -->

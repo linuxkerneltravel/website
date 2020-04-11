@@ -78,3 +78,30 @@
 
 - id: 404NavHome
   translation: "跳到主页"
+
+- id: archivedIn
+  translation: "归档于"
+
+- id: words
+  translation: "字"
+
+- id: readInAbout
+  translation: "阅读大约需要"
+
+- id: minute
+  translation: "分钟"
+
+- id: translator
+  translation: "译者"
+
+- id: previousPost
+  translation: "更旧"
+
+- id: nextPost
+  translation: "更新"
+
+- id: reviewer
+  translation: "审校者"
+
+- id: originallink
+  translation: "查看原文"
