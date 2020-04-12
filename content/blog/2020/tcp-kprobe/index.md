@@ -1,11 +1,13 @@
-+++
-title = "“tcp丢包分析”实验解析(二)--kprobe和tracepoint"
-date = "2020-04-10T13:47:08+02:00"
-categories = ["Linux内核试验"]
-banner = "img/banners/“tcp丢包分析”实验解析(二).png"
-summary = "tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析，本文由戴君毅整理，梁金荣编辑,贺东升校对。"
+---
+title : "“tcp丢包分析”实验解析(二)--kprobe和tracepoint"
+date : "2020-04-10T13:47:08+02:00"
+author: "Linux内核之旅"
+keywords: ["Linux","TCP"]
+categories : ["Linux内核试验"]
+banner : "img/blogimg/1.png"
+summary : "tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析，本文由戴君毅整理，梁金荣编辑,贺东升校对。"
 
-+++
+---
 
 > tcp丢包分析系列文章代码来自谢宝友老师，由西邮陈莉君教授研一学生进行解析，本文由戴君毅整理，梁金荣编辑，贺东升校对。
 

@@ -62,10 +62,10 @@
   translation: "关于我们"
 
 - id: newer
-  translation: "更新"
+  translation: "下一个"
 
 - id: older
-  translation: "更旧"
+  translation: "上一个"
 
 - id: publishedOn
   translation: "在"
@@ -95,10 +95,10 @@
   translation: "译者"
 
 - id: previousPost
-  translation: "更旧"
+  translation: "上一个"
 
 - id: nextPost
-  translation: "更新"
+  translation: "下一个"
 
 - id: reviewer
   translation: "审校者"
