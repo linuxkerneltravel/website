@@ -57,9 +57,11 @@ Switched to a new branch 'pr_intro'
 helightxu$ 
 ```
 #### 4.2 编辑开发
-这里以 hugo 新建一个博文为例进行介绍。首先使用下面的命令新建一个 markdown 文件。
+社区站点是使用 [hugo](https://gohugo.io/) 搭建管理，所以大家需要在本地搭建使用 hugo 来预览稿件效果。这里有个[中文帮助站点](https://hugo.aiaide.com/)大家可以学习。
+
+这里以 [hugo](https://gohugo.io/) 新建一个博文为例进行介绍。首先使用下面的命令新建一个 markdown 文件。
 ```sh
-helightxu$ hugo new blog/2020/submit_pr/index.md                          ✔   pr_intro
+helightxu$ hugo new blog/2020/submit_pr/index.md
 /Users/helightxu/helight_doc/website-linuxkerneltravel/content/blog/2020/submit_pr/index.md created
 helightxu$
 ```
