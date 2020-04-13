@@ -1,7 +1,7 @@
 ---
 title : "“tcp丢包分析”实验解析(一)--proc文件系统"
 date : "2020-04-10T13:47:08+02:00"
-author: "Linux内核之旅"
+author: "戴君毅、梁金荣"
 keywords: ["Linux","TCP"]
 categories : ["Linux内核试验"]
 banner : "img/blogimg/1.png"
