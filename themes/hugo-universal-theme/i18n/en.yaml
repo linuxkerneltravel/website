@@ -78,3 +78,30 @@
 
 - id: 404NavHome
   translation: "Go to homepage"
+  
+- id: archivedIn
+  translation: "in"
+
+- id: words
+  translation: "words"
+
+- id: readInAbout
+  translation: "read in about"
+
+- id: minute
+  translation: "min"
+
+- id: translator
+  translation: "translator"
+
+- id: previousPost
+  translation: "previous"
+
+- id: nextPost
+  translation: "next"
+
+- id: reviewer
+  translation: "reviewer"
+
+- id: originallink
+  translation: "original"
