@@ -41,16 +41,25 @@
                                     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
                                     <div class="clearfix">
                                         <p class="author-category">
-                                          {{ if isset .Params "author" }}
-                                          {{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a>
-                                          {{ end }}
-                                          {{ if isset .Params "categories" }}
-                                          {{ if gt (len .Params.categories) 0 }}
-                                          in <a href="{{ "categories/" | relURL }}{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a>
-                                          {{ end }}
-                                          {{ end }}
-
-                                        </p>
+                                            {{ if and (isset .Params "author") (isset .Params "authorlink") }}
+                                            {{ i18n "authorBy" }} <a href="{{ .Params.authorlink }}">{{ .Params.author }}</a>
+                                            {{ else if isset .Params "author" }}
+                                            {{ i18n "authorBy" }} {{ .Params.author }}
+                                            {{ end }}
+                                            {{ if and (isset .Params "translator") (isset .Params "translatorlink") }}
+                                            | {{ i18n "translator" }} <a href="{{ .Params.translatorlink }}">{{ .Params.translator }}</a>
+                                            {{ else if isset .Params "translator" }} | {{ i18n "translator" }} {{ .Params.translator }}
+                                            {{ end }}
+                                            |
+                                            {{ .FuzzyWordCount }}{{ i18n "words" }} | {{ i18n "readInAbout" }}{{ .ReadingTime }}{{ i18n "minute" }}
+                                            |
+                                            {{ if isset .Params "categories" }}
+                                            {{ if gt (len .Params.categories) 0 }}
+                                            {{ i18n "archivedIn" }}<a href="/categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a>
+                                            {{ end }}
+                                            {{ end }}
+  
+                                          </p>
                                         {{ if isset .Params "date" }}
                                         <p class="date-comments">
                                             <a href="{{ .Permalink }}"><i class="far fa-calendar"></i> {{ .Date.Format .Site.Params.date_format }}</a>
@@ -63,7 +72,26 @@
                                 </div>
                             </div>
                         </section>
-                        {{ end }} 
+                        {{ end }}
+
+                        <ul class="pager">
+                            {{ if .Paginator.HasPrev }}
+                            <li class="previous"><a href="{{ .Paginator.Prev.URL | relURL }}">&larr; {{ i18n "newer" }}</a></li>
+                            {{ else }}
+                            <li class="previous disabled"><a href="#">&larr; {{ i18n "newer" }}</a></li>
+                            {{ end }}
+
+                            {{ if .Paginator.HasNext }}
+                            <li class="next"><a href="{{ .Paginator.Next.URL | relURL }}">{{ i18n "older" }} &rarr;</a></li>
+                            {{ else }}
+                            <li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
+                            {{ end }}
+                        </ul>
+                        <div align="center" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                            {{ template "_internal/pagination.html" . }}
+                            {{ range .Paginator.Pages }}
+                            {{ end }}
+                        </div>
                     </div>
                     <!-- /.col-md-9 -->
 
