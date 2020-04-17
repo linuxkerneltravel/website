@@ -54,7 +54,7 @@ I/O设备与主存信息传送的控制方式分为程序轮询、中断、DMA�
 
 ###### 2. 三种方式的CPU工作效率比较
 
-<img src="4.png" style="zoom: 40%;" />
+<img src="imgs/4.png" style="zoom:40%;" />
 
 ​	在I/O准备阶段，程序轮询方式的CPU一直在查询等待，而中断方式的CPU可以继续执行现行程序，但是当I/O准备就绪，设备向CPU发出中断请求，CPU响应以实现数据的传输，这个过程会占用CPU一段时间，而且这段时间比使用程序轮询方式的CPU传输数据的时间还要长，因为CPU除了传输数据还要做一些准备工作，如把CPU寄存器中的数据都转移到栈中。
 
@@ -77,7 +77,7 @@ I/O设备与主存信息传送的控制方式分为程序轮询、中断、DMA�
 
 ​	网卡通过DMA方式将数据发送到**Receive Ring Buffer**,然后**Receive Ring Buffer**把数据包传给IP协议所在的网络层，然后再由路由机制传给TCP协议所在的传输层，最终传给用户进程所在的应用层。下一节在数据链路层上分析具体分析网卡是如何处理数据包的。
 
-<img src="5.png" style="zoom: 40%;" />
+<img src="imgs/5.png" style="zoom: 45%;" />
 
 ###### 2. 数据链路层上网卡对数据包的处理
 
@@ -85,7 +85,7 @@ I/O设备与主存信息传送的控制方式分为程序轮询、中断、DMA�
 
 ​	驱动程序在初始化时分配DMA缓冲区，并使用驱动程序直到停止运行。
 
-<img src="6.png" style="zoom: 45%;" />
+<img src="imgs/6.png" style="zoom:40%;" />
 
 准备工作：
 
@@ -107,13 +107,15 @@ poll 函数清理 sk_buff，清理 Ring Buffer 上的 Descriptor 将其指向新
 
 Intel的千兆以太网卡e1000使用非常广泛，我虚拟机上的网卡就是它。
 
-![](7-1587111363511.png)
+![](imgs/7.png)
+
+![](imgs/8.png)
 
 这里就以该网卡的驱动程序为例，初步分析它是怎么建立DMA机制的。
 
 源码目录及文件：
 
-<img src="8.png" style="zoom:67%;" />
+![](imgs/9.png)
 
 内核模块插入函数在```e1000_main.c```文件中，它是加载驱动程序时调用的第一个函数。
 
@@ -170,11 +172,11 @@ static struct pci_driver e1000_driver = {
 
 e1000_driver```里面初始化了设备的名字为“e1000”，
 
-![](9-1587111900150.png)
+![](imgs/10.png)
 
 还定义了一些操作，如插入新设备、移除设备等，还包括电源管理相关的暂停操作和唤醒操作。下面是```struct pci_driver```一些主要的域。
 
-<img src="10.png" style="zoom: 67%;" />
+![](imgs/11.png)
 
 对该驱动程序稍微了解后，先跳过其他部分，直接看DMA相关代码。
 在```e1000_probe```函数，即“插入新设备”函数中，下面这段代码先对DMA缓冲区的大小进行检查
@@ -272,7 +274,7 @@ static int e1000_setup_rx_resources(struct e1000_adapter *adapter,
 ​	其实这个函数还隐式的返回了物理地址，物理地址存在第三个参数中。
 ​	指针rxdr指向的是```struct e1000_rx_ring```这个结构体，该结构体就是接收环形缓冲区。
 
-<img src="C:\Users\xxw\Desktop\11.png" style="zoom:67%;" />
+![](imgs/12.png)
 
 ​	若成功申请到DMA内存，则用```memset()```函数把申请的内存清零，rxdr的其他域也清零。
 
