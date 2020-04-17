@@ -75,14 +75,16 @@ ls
 
 ![](img/5.png)
 
-
 把它复制，粘贴到GitHub网站上这里:
 
+<img src="img/6.png" style="zoom:60%" />
 
-![](img/6.png)
 
 
-![](img/7.png)
+<img src="img/7.png" style="zoom:60%" />
+
+
+
 
 
 添加成功后会显示出来:
@@ -101,20 +103,20 @@ ssh-keygen -t rsa -C "你的邮箱"
 ## （1）远程仓库管理
 在GitHub上新建一个仓库，在这里开始创建。
 
+<img src="img/9.png" style="zoom:60%" />
 
-![](img/9.png)
+
+
 
 
 输入仓库名、描述信息、勾选公开仓库，创建README文件，点击Create repository创建仓库即可。
 
-
-![](img/10.png)
+<img src="img/10.png" style="zoom:60%" />
 
 
 创建成功后，我们GitHub上就有了一个远程空仓库啦，如下图。
 
-
-![](img/11.png)
+<img src="img/11.png" style="zoom:60%" />
 
 
 ## （2）本地仓库管理
@@ -170,8 +172,7 @@ git push url master
 
 看一下远程仓库，我们的代码已经上传到GitHub远程仓库了。
 
-
-![](img/14.png)
+<img src="img/14.png" style="zoom:60%" />
 
 
 # 4、git常用操作
