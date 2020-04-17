@@ -4,13 +4,13 @@ date: 2020-04-17T11:42:00+08:00
 author: "白嘉庆"
 keywords: ["LINUX网络"]
 categories : ["内核网络"]
-banner : "img/blogimg/default.png"
+banner : "img/blogimg/dma.png"
 summary : "我们先从计算机组成原理的层面介绍DMA，再简单介绍Linux网络子系统的DMA机制是如何的实现的。"
 ---
 
- 我们先从计算机组成原理的层面介绍DMA，再简单介绍Linux网络子系统的DMA机制是如何的实现的。
+>  本文由西邮陈莉君教授研一学生进行解析，由白嘉庆整理，薛晓雯编辑，崔鹏程校对
 
-
+我们先从计算机组成原理的层面介绍DMA，再简单介绍Linux网络子系统的DMA机制是如何的实现的。
 
 ##### 一、计算机组成原理中的DMA
 
@@ -30,7 +30,7 @@ I/O设备与主存信息传送的控制方式分为程序轮询、中断、DMA�
 
 
 
-![](imgs/1.png)
+<img src="imgs/1.png" style="zoom:67%;" />
 
 ```
                       					图1 
@@ -38,7 +38,7 @@ I/O设备与主存信息传送的控制方式分为程序轮询、中断、DMA�
 
 上周分享“图1”时，刘老师说在DMA方式下， DMA控制器（即DMA接口）也是需要和CPU交流的，但是图中没有显示DMA控制器与CPU交流信息。但是这张图我是按照哈工大刘宏伟老师的《计算机组成原理》第五章的内容画出的，应该是不会有问题的。查找了相关资料，觉得两个刘老师都没有错，因为这张图强调的是数据的走向，即这里的线仅是数据线。如果要严格一点，把控制线和地址线也画出来，将是“图2”这个样子：
 
-<img src="C:\Users\xxw\Desktop\2.png" style="zoom:60%;" />
+<img src="2.png" style="zoom:67%;" />
 
 ```
                                              图2
@@ -48,7 +48,7 @@ I/O设备与主存信息传送的控制方式分为程序轮询、中断、DMA�
 
 “图2”对“图1”的数据线加粗，新增细实线表示地址线，细虚线表示控制线。可以看出在中断方式下，无论是传输数据、地址还是控制信息，都要经过CPU，即都要在CPU的寄存器中暂存一下，都要浪费CPU的资源；但是在DMA方式下，传输数据和地址时，I/O设备可以通过“DMA接口”直接与主存交流，只有传输控制信息时，才需要用到CPU。而传输控制信息占用的时间是极小的，可以忽略不计，所以可以认为DMA方式完全没有占用CPU资源，这等价于I/O设备和CPU可以实现真正的并行工作，这比中断方式下的并行程度要更高很多。
 
-<img src="C:\Users\xxw\Desktop\3.png" style="zoom:60%;" />
+<img src="3.png" style="zoom:67%;" />
 
 ```
                                      图3
@@ -56,7 +56,7 @@ I/O设备与主存信息传送的控制方式分为程序轮询、中断、DMA�
 
 ###### 2. 三种方式的CPU工作效率比较
 
-<img src="C:\Users\xxw\Desktop\4.png" style="zoom: 40%;" />
+<img src="4.png" style="zoom: 40%;" />
 
 ​	在I/O准备阶段，程序轮询方式的CPU一直在查询等待，而中断方式的CPU可以继续执行现行程序，但是当I/O准备就绪，设备向CPU发出中断请求，CPU响应以实现数据的传输，这个过程会占用CPU一段时间，而且这段时间比使用程序轮询方式的CPU传输数据的时间还要长，因为CPU除了传输数据还要做一些准备工作，如把CPU寄存器中的数据都转移到栈中。
 
@@ -79,7 +79,7 @@ I/O设备与主存信息传送的控制方式分为程序轮询、中断、DMA�
 
 ​	网卡通过DMA方式将数据发送到**Receive Ring Buffer**,然后**Receive Ring Buffer**把数据包传给IP协议所在的网络层，然后再由路由机制传给TCP协议所在的传输层，最终传给用户进程所在的应用层。下一节在数据链路层上分析具体分析网卡是如何处理数据包的。
 
-<img src="C:\Users\xxw\Desktop\5.png" style="zoom:40%;" /> 
+<img src="5.png" style="zoom: 40%;" />
 
 ###### 2. 数据链路层上网卡对数据包的处理
 
@@ -87,7 +87,7 @@ I/O设备与主存信息传送的控制方式分为程序轮询、中断、DMA�
 
 ​	驱动程序在初始化时分配DMA缓冲区，并使用驱动程序直到停止运行。
 
-<img src="C:\Users\xxw\Desktop\6.png" style="zoom:40%;" />
+<img src="6.png" style="zoom: 45%;" />
 
 准备工作：
 
@@ -109,18 +109,42 @@ poll 函数清理 sk_buff，清理 Ring Buffer 上的 Descriptor 将其指向新
 
 Intel的千兆以太网卡e1000使用非常广泛，我虚拟机上的网卡就是它。
 
-![](7.png)
+![](7-1587111363511.png)
 
 这里就以该网卡的驱动程序为例，初步分析它是怎么建立DMA机制的。
 
 源码目录及文件：
 
-<img src="C:\Users\xxw\Desktop\8.png" style="zoom:50%;" />
+<img src="8.png" style="zoom:67%;" />
 
 内核模块插入函数在```e1000_main.c```文件中，它是加载驱动程序时调用的第一个函数。
 
 ```c
-`/**  * e1000_init_module - Driver Registration Routine  *  * e1000_init_module is the first routine called when the driver is  * loaded. All it does is register with the PCI subsystem.  **/ static int __init e1000_init_module(void) { 	int ret; 	pr_info("%s - version %s\n", e1000_driver_string, e1000_driver_version);  	pr_info("%s\n", e1000_copyright);  	ret = pci_register_driver(&e1000_driver); 	if (copybreak != COPYBREAK_DEFAULT) { 		if (copybreak == 0) 			pr_info("copybreak disabled\n"); 		else 			pr_info("copybreak enabled for " 				   "packets <= %u bytes\n", copybreak); 	} 	return ret; }  module_init(e1000_init_module); `
+/**
+ * e1000_init_module - Driver Registration Routine
+ *
+ * e1000_init_module is the first routine called when the driver is
+ * loaded. All it does is register with the PCI subsystem.
+**/
+static int __init e1000_init_module(void)
+{
+	int ret;
+	pr_info("%s - version %s\n", e1000_driver_string, e1000_driver_version);
+
+	pr_info("%s\n", e1000_copyright);
+
+	ret = pci_register_driver(&e1000_driver);
+	if (copybreak != COPYBREAK_DEFAULT) {
+		if (copybreak == 0)
+			pr_info("copybreak disabled\n");
+		else
+			pr_info("copybreak enabled for "
+				   "packets <= %u bytes\n", copybreak);
+	}
+	return ret;
+}
+
+module_init(e1000_init_module);
 ```
 
 该函数所做的只是向PCI子系统注册，这样CPU就可以访问网卡了，因为CPU和网卡是通过PCI总线相连的。
@@ -131,19 +155,28 @@ Intel的千兆以太网卡e1000使用非常广泛，我虚拟机上的网卡就�
 ```e1000_driver```是```struct pci_driver```类型的结构体，
 
 ```c
-`static struct pci_driver e1000_driver = { 
-.name     = e1000_driver_name, 	
-.id_table = e1000_pci_tbl, 	
-.probe    = e1000_probe, 	.remove   = e1000_remove, #ifdef CONFIG_PM 	/* Power Management Hooks */ 	.suspend  = e1000_suspend, 	.resume   = e1000_resume, #endif 	.shutdown = e1000_shutdown, 	.err_handler = &e1000_err_handler }; `
+static struct pci_driver e1000_driver = {
+	.name     = e1000_driver_name,
+	.id_table = e1000_pci_tbl,
+	.probe    = e1000_probe,
+	.remove   = e1000_remove,
+#ifdef CONFIG_PM
+	/* Power Management Hooks */
+	.suspend  = e1000_suspend,
+	.resume   = e1000_resume,
+#endif
+	.shutdown = e1000_shutdown,
+	.err_handler = &e1000_err_handler
+};
 ```
 
 e1000_driver```里面初始化了设备的名字为“e1000”，
 
-![](9.png)
+![](9-1587111900150.png)
 
 还定义了一些操作，如插入新设备、移除设备等，还包括电源管理相关的暂停操作和唤醒操作。下面是```struct pci_driver```一些主要的域。
 
-<img src="C:\Users\xxw\Desktop\10.png" style="zoom:67%;" />
+<img src="10.png" style="zoom: 67%;" />
 
 对该驱动程序稍微了解后，先跳过其他部分，直接看DMA相关代码。
 在```e1000_probe```函数，即“插入新设备”函数中，下面这段代码先对DMA缓冲区的大小进行检查
