@@ -52,6 +52,12 @@ paginate = 15
     weight = 4
 
 [[menu.main]]
+    identifier = "movie"
+    name = "内核视频"
+    url  = "/movie/"
+    weight = 5
+
+[[menu.main]]
     identifier = "contact"
     name = "关于"
     url  = "/contact/"
