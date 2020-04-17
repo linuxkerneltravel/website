@@ -125,7 +125,7 @@ paginate = 15
     #email = "your@email.com"
     #contact_form_ajax = false
 
-    about_us = "<p>请关注我们的微信公众号：Linux内核之旅</p> <br><p> <img src='/img/weixin.png' alt='Linux内核之旅微信公众号' width='128' height='128'></p>"
+    about_us = "<p>邮箱：liangjinrong111@163.com <br> 请关注我们的微信公众号：Linux内核之旅</p> <br><p> <img src='/img/weixin.png' alt='Linux内核之旅微信公众号' width='128' height='128'></p>"
     copyright = "Copyright (c), linuxkerneltravel, all rights reserved."
 
     # Format dates with Go's time formatting
