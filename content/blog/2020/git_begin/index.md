@@ -77,11 +77,11 @@ ls
 
 把它复制，粘贴到GitHub网站上这里:
 
-<img src="img/6.png" style="zoom:60%" />
+<img src="img/6.png"  />
 
 
 
-<img src="img/7.png" style="zoom:60%" />
+<img src="img/7.png"  />
 
 
 

@@ -167,8 +167,8 @@ paginate = 15
     # All testimonials are defined in their own files. You can find example items
     # at 'exampleSite/data/testimonials'.
     # For more informtion take a look at the README.
-    title = "Linux内核之旅社区委员会"
-    subtitle = "Linux内核之旅致力于传播开源文化，教授Linux内核知识。目前我们有五大平台，包括Linux内核之旅网站、GitHub、微信公众号“Linux内核之旅”、学堂在线mooc和bilibili内核视频站。以下为部分社区成员："
+    title = "Linux内核之旅开源社区委员会"
+    subtitle = "Linux内核之旅致力于传播开源文化，教授和传播Linux内核知识。目前我们有五大平台，包括Linux内核之旅网站、GitHub、微信公众号“Linux内核之旅”、学堂在线mooc和bilibili内核视频站。以下为部分社区成员："
 
 [params.see_more]
     enable = true
