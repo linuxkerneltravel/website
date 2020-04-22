@@ -99,14 +99,11 @@ ls
 ssh-keygen -t rsa -C "你的邮箱"
 ```
 此时生成秘钥，使用cat命令查看，然后添加到GitHub网站即可。
-# 2、仓库管理
-## （1）远程仓库管理
+# 2、git仓库管理
+
 在GitHub上新建一个仓库，在这里开始创建。
 
 <img src="img/9.png"  />
-
-
-
 
 
 输入仓库名、描述信息、勾选公开仓库，创建README文件，点击Create repository创建仓库即可。
@@ -118,13 +115,6 @@ ssh-keygen -t rsa -C "你的邮箱"
 
 <img src="img/11.png" />
 
-
-## （2）本地仓库管理
-
-三种方法创建本地仓库：
-1. 我们可以在本地mkdir新建一个文件夹，然后`git pull`我们的远程仓库；
-2. 我们可以使用`git clone`克隆一个别人公开的项目到本地；
-3. 我们在本地新建文件夹，然后`git init`。
 
 # 3、提交项目到GitHub
 **基本的 Git 工作流程如下：**
