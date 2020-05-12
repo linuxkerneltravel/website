@@ -58,10 +58,16 @@ paginate = 15
     weight = 5
 
 [[menu.main]]
+    identifier = "oldWeb"
+    name = "旧网站"
+    url  = "http://wwww.kerneltravel.net/"
+    weight = 6
+
+[[menu.main]]
     identifier = "contact"
     name = "关于"
     url  = "/contact/"
-    weight = 6
+    weight = 10
 
 
 # Top bar social links menu
