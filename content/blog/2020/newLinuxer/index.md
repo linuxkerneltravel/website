@@ -4,7 +4,7 @@ date: 2020-05-13T14:39:23+08:00
 keywords: ["内核","入门"]
 author: "edsionte"
 categories : ["新手上路"]
-banner : "img/blogimg/linuxer.png"
+banner : "img/blogimg/1.png"
 summary : "Linux操作系统的原理固然很重要，适量的代码实践则可以让你具体的了解内核。通过原理-实践-原理的过程，可以让我们不断的深入学习。本系列文章是以初学者的角度描写，每篇文章除了简单的分析相关原理外，还有完整的代码演示。"
 ---
 
