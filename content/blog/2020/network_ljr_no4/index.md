@@ -8,8 +8,6 @@ banner : "img/blogimg/Network.jpg"
 summary : "本文将编写一个简单的基于TCP协议的客户端和服务器端的实例，并使用wireshark工具捕获数据包。Wireshark是一款图形界面的网络嗅探器，支持多种平台，是网络流量分析的利器。"
 ---
 
-# socket编程实例及数据包捕获工具的使用
-
 本文将编写一个简单的基于TCP协议的客户端和服务器端的实例，并使用wireshark工具捕获数据包。Wireshark是一款图形界面的网络嗅探器，支持多种平台，是网络流量分析的利器。
 
 ## 1.功能描述
@@ -256,6 +254,7 @@ sudo vim /etc/group
 
 ### 6.2 使用wireshark抓包
 我在本地编写了一个 TCP 的 server 和 client，启动 server 和 client，由于本地的数据包是不经过网卡的，所以需要选择此项来进行抓包：
+
 ![](img/7.png)
 
 
@@ -312,7 +311,13 @@ Wireshark有强大的统计分析功能，可以帮助分析人员快速统计�
 
 这部分功能可以统计分层信息、网络会话列表、网络端点列表、ip地址统计列表、应用层数据包信息等，还可以生成统计图表。
 
-![1589715021745](img/14.png)
+
+
+<img src="img/14.png" style="zoom:70%">
+
+
+
+
 
 例如Statistics（统计）-->TCP Stream Graph（TCP流图形），可以生成一些统计图表：
 
