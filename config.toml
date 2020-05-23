@@ -46,22 +46,40 @@ paginate = 15
     weight = 3
 
 [[menu.main]]
-    identifier = "mooc"
+    identifier = "陈老师mooc"
     name = "mooc"
     url  = "https://next.xuetangx.com/course/XIYOU08091001441/1516763"
     weight = 4
 
 [[menu.main]]
     identifier = "movie"
-    name = "内核视频"
+    name = "陈老师课堂"
     url  = "/movie/"
     weight = 5
+
+[[menu.main]]
+    identifier = "video"
+    name = "内核视频"
+    url  = "/video/"
+    weight = 6
+
+[[menu.main]]
+    identifier="book"
+    name = "开源书籍"
+    url  = "/book/"
+    weight = 7
+
+[[menu.main]]
+    identifier="note"
+    name = "读书笔记"
+    url  = "/note/"
+    weight = 8
 
 [[menu.main]]
     identifier = "oldWeb"
     name = "旧网站"
     url  = "http://wwww.kerneltravel.net/"
-    weight = 6
+    weight = 9
 
 [[menu.main]]
     identifier = "contact"
