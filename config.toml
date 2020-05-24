@@ -77,7 +77,7 @@ paginate = 15
 
 [[menu.main]]
     identifier = "oldWeb"
-    name = "旧网站"
+    name = "原网站链接"
     url  = "http://wwww.kerneltravel.net/"
     weight = 9
 
