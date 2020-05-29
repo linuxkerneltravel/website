@@ -8,7 +8,7 @@ id = "contact"
 
 1. 项目名称：Linux显微镜
 2. 项目描述：LMP(Linux microscope)是一个基于bcc(BPF Compiler Collection)的Linux系统性能数据实时展示的web工具，它使用BPF(Berkeley Packet Filters)，也叫eBPF技术，提取Linux内核细粒度性能数据，展示在web界面，为运维人员提供参考。
-3. 项目难度：低
+3. 项目难度：中
 4. 项目社区导师：陈莉君
 5. 导师联系方式：cljcore@126.com
 6. 合作导师联系方式（选填）：
