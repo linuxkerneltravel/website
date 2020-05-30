@@ -1,7 +1,8 @@
-+++
-title = "Linux内核视频"
-id = "contact"
-+++
+---
+title : "Linux内核视频"
+date : "2020-05-30T13:47:08+02:00"
+
+---
 
 # Linux内核视频平台简介
 
