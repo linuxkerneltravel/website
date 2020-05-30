@@ -1,7 +1,7 @@
 +++
 title = "社区项目"
 id = "contact"
-
+date = 2020-05-30T14:30:45+08:00
 +++
 
 > 本项目参加开源软件供应链点亮计划暑期 2020 项目活动，如您参与，请先仔细阅读[学生指南](https://isrc.iscas.ac.cn/summer2020/help/student.html)。
