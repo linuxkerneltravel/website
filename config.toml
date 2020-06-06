@@ -31,43 +31,89 @@ paginate = 15
     identifier="home"
     name = "主页"
     url  = "/"
-    weight = 1
+    weight = 10
 
 [[menu.main]]
     identifier="blog"
     name = "博客"
     url  = "/blog/"
-    weight = 2
+    weight = 20
 
 [[menu.main]]
     identifier = "github"
     name = "github"
     url  = "https://github.com/linuxkerneltravel"
-    weight = 3
+    weight = 30
+
+[[menu.main]]
+    identifier = "shipin"
+    name = "内核视频"
+    url  = "https://next.xuetangx.com/course/XIYOU08091001441/1516763"
+    weight = 40
 
 [[menu.main]]
     identifier = "mooc"
     name = "mooc"
     url  = "https://next.xuetangx.com/course/XIYOU08091001441/1516763"
-    weight = 4
+    weight = 41
+    parent = "shipin"
 
 [[menu.main]]
     identifier = "movie"
-    name = "内核视频"
+    name = "陈老师课堂"
     url  = "/movie/"
-    weight = 5
+    weight = 42
+    parent = "shipin"
+
+[[menu.main]]
+    identifier = "video"
+    name = "内核视频"
+    url  = "/video/"
+    weight = 43
+    parent = "shipin"
+
+[[menu.main]]
+    identifier="project"
+    name = "社区项目"
+    url  = "/project/"
+    weight = 50
+
+[[menu.main]]
+    identifier="magzeine"
+    name = "电子杂志"
+    url  = "/magazine/"
+    weight = 60
+
+[[menu.main]]
+    identifier="books"
+    name = "陈老师著作"
+    weight = 70
+
+[[menu.main]]
+    identifier="book"
+    name = "开源书籍"
+    url  = "/book/"
+    parent = "books"
+    weight = 71
+
+[[menu.main]]
+    identifier="note"
+    name = "读书笔记"
+    url  = "/note/"
+    parent = "books"
+    weight = 72
 
 [[menu.main]]
     identifier = "oldWeb"
-    name = "旧网站"
+    name = "原网站链接"
     url  = "http://wwww.kerneltravel.net/"
-    weight = 6
+    weight = 90
 
 [[menu.main]]
     identifier = "contact"
     name = "关于"
     url  = "/contact/"
-    weight = 10
+    weight = 100
 
 
 # Top bar social links menu
