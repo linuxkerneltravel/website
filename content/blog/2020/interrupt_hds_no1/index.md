@@ -2,8 +2,8 @@
 title: "中断下半部-工作队列"
 date: 2020-06-06T10:11:52+08:00
 keywords: ["中断","工作队列"]
-categories : ["中断"]
-banner : "img/blogimg/default.png"
+categories : ["中断机制"]
+banner : "img/blogimg/workqueue.png"
 summary : "工作队列（work queue）是另外一种将中断的部分工作推后的一种方式，它可以实现一些tasklet不能实现的工作，比如工作队列机制可以睡眠。"
 ---
 
