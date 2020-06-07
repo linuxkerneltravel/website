@@ -5,10 +5,8 @@ author: "Jinrong"
 keywords: ["eBPF"]
 categories : ["eBPF"]
 banner : "img/blogimg/eBPF.png"
-summary : "Linux 4.4 以上内核基于 eBPF 可以将任何内核函数调用转换成可带任何数据的用户空间事件。本文将使用 bcc工具抓取内核网络中的数据，包括抓取 backlog 信息、port 和 IP 信息、网络命名空间信息等。修改上一篇文章的代码并使用bpf_probe_read读取到相应变量的地址，使用perf使得bpf_trace_printk带四个参数，获取IP信息，端口、backlog 信息和网络命名空间。"
+summary : "Linux 4.4 以上内核基于 eBPF 可以将任何内核函数调用转换成可带任何数据的用户空间事件。程序采集系统相关参数时，通常有两种方式。一种是程序主动去轮询，检查系统变化，即 poll 模型；另一种是系统主动通知程序，即 push 模型。使用 poll 模型还是 push 模型取决于具体的问题。通常情况下，如果事件频率相对于事件处理时间来说比较低，那 push 模型比较合适；如果事件频率很高，就采用 pull 模型。例如，通常的网络驱动会等待网卡事件，而 dpdk 这样的框架会主动 poll 网卡， 以获得最高的吞吐性能和最低的延迟。理想情况下，我们需要一个通用的方式处理事件，具体做法请看此篇。"
 ---
-
-
 
 
 
@@ -18,7 +16,17 @@ summary : "Linux 4.4 以上内核基于 eBPF 可以将任何内核函数调用�
 
 [获取内核网络中的SOCKET信息](http://kerneltravel.net/blog/2020/ebpf_ljr_no2/)
 
-Linux 4.4 以上内核基于 eBPF 可以将任何内核函数调用转换成可带任何数据的用户空间事件。上回，我们说到`bpf_trace_printk` 带的参数太多了，会出现`error: <unknown>:0:0: in function kprobe__inet_listen i32 (%struct.pt_regs*): too many args to 0x55a83e8f8320: i64 = Constant<6> `这样的错误，这是 BPF 的限制。解决这个问题的办法就是使用 perf，它支持传递任意大小的结构体到用户空间。
+
+
+Linux 4.4 以上内核基于 eBPF 可以将任何内核函数调用转换成可带任何数据的用户空间事件。程序采集系统相关参数时，通常有两种方式。一种是程序主动去轮询，检查系统变化，即 poll 模型；另一种是系统主动通知程序，即 push 模型。使用 poll 模型还是 push 模型取决于具体的问题。通常情况下，如果事件频率相对于事件处理时间来说比较低，那 push 模型比较合适；如果事件频率很高，就采用 pull 模型。例如，通常的网络驱动会等待网卡事件，而 dpdk 这样的框架会主动 poll 网卡， 以获得最高的吞吐性能和最低的延迟。理想情况下，我们需要一个通用的方式处理事件，具体做法请往下看。
+
+
+
+本文将使用 bcc工具抓取内核网络中的数据，包括抓取 backlog 信息、port 和 IP 信息、网络命名空间信息等。修改上一篇文章的代码并使用bpf_probe_read读取到相应变量的地址，使用perf使得bpf_trace_printk带四个参数，获取IP信息，端口、backlog 信息和网络命名空间。
+
+
+
+上回，我们说到`bpf_trace_printk` 带的参数太多了，会出现`error: <unknown>:0:0: in function kprobe__inet_listen i32 (%struct.pt_regs*): too many args to 0x55a83e8f8320: i64 = Constant<6> `这样的错误，这是 BPF 的限制。解决这个问题的办法就是使用 perf，它支持传递任意大小的结构体到用户空间。
 
 我们对比原来的代码进行修改，原代码如下：
 
