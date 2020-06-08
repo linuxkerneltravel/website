@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Pthread"
 date: 2020-06-08T17:12:56+08:00
@@ -7,6 +8,8 @@ banner : "img/blogimg/3.png"
 summary : "本文从三个方面讲述进程线程的那些事儿，先介绍了由线程引发的概述，接着讲述了进程在Linux内核中的角色扮演，最后从实践理解基本原理。"
 ---
 
+=======
+>>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
 # 线程的那些事儿
 
 ##### 1.线程
@@ -41,7 +44,11 @@ POSIX标准规定在一个多线程的应用程序中，所有线程都必须具
 
 2).内核线程只能调用内核函数，而普通进程必须通过系统调用才能使用内核函数。
 
+<<<<<<< HEAD
 **参考：**
+=======
+ **参考：**
+>>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
 
 **1. 深入理解Linux内核 第三版**
 
@@ -75,7 +82,11 @@ POSIX标准规定在一个多线程的应用程序中，所有线程都必须具
 
 进程、线程以及内核线程都有对应的创建函数，不过这三者所对应的创建函数最终在内核都是由do_fork()进行创建的，具体的调用关系图如下：
 
+<<<<<<< HEAD
 [![](img/1.jpg)]
+=======
+![](E:%5Cgithub%5Cwebsite%5Ccontent%5Cblog%5C2020%5Cpthread%5Cimgs%5C1.jpg)
+>>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
 
 从图中可以看出，内核中创建进程的核心函数即为看do_fork()，该函数的原型如下：
 
@@ -88,6 +99,11 @@ long do_fork(unsigned long clone_flags,
 	      int __user *child_tidptr)
 ```
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
 **stack_start**：子进程用户态堆栈的指针，该参数会被赋值给子进程的esp寄存器。
 
 **regs**：指向通用寄存器值的指针，当进程从用户态切换到内核态时通用寄存器中的值会被保存到内核态堆栈中。
@@ -134,8 +150,16 @@ sys_clone(unsigned long clone_flags, unsigned long newsp,
 		newsp = regs->sp;
 	return do_fork(clone_flags, newsp, regs, 0, parent_tid, child_tid);
 }
+<<<<<<< HEAD
 ```
 
+=======
+
+```
+
+
+
+>>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
 **fork()**：由于do_fork()中clone_flags参数除了子进程结束时返回给父进程的SIGCHLD信号外并无其他特性标志，因此由fork()创建的进程不会共享父进程的任何资源。子进程会完全复制父进程的资源，也就是说父子进程相对独立。不过由于写时复制技术（Copy On Write，COW）的引入，子进程可以只读父进程的物理页，只有当两者之一去写某个物理页时，内核此时才会将这个页的内容拷贝到一个新的物理页，并把这个新的物理页分配给正在写的进程。
 
 **vfork()**：do_fork()中的clone_flags使用了CLONE_VFORK和CLONE_VM两个标志。CLONE_VFORK标志使得子进程先于父进程执行，父进程会阻塞到子进程结束或执行新的程序。CLONE_VM标志使得子进程共享父进程的内存地址空间（父进程的页表项除外）。在COW技术引入之前，vfork()适用子进程形成后立马执行execv()的情形。因此，vfork()现如今已经没有特别的使用之处，因为写实复制技术完全可以取代它创建进程时所带来的高效性。
@@ -150,11 +174,26 @@ sys_clone(unsigned long clone_flags, unsigned long newsp,
 
 一个新内核线程的创建是通过在现有的内核线程中使用kernel_thread()而创建的，其本质也是向do_fork()提供特定的flags标志而创建的。
 
+<<<<<<< HEAD
 ```c
 int kernel_thread(int (*fn)(void *), void *arg, unsigned long flags) { 
 	struct pt_regs regs;  	
 	return do_fork(flags | CLONE_VM | CLONE_UNTRACED, 0, &regs, 0, NULL, NULL);
 } 
+=======
+
+
+```
+
+```
+
+```
+
+```
+
+```C
+`int kernel_thread(int (*fn)(void *), void *arg, unsigned long flags) { 	struct pt_regs regs;  	memset(&regs, 0, sizeof(regs));  	regs.si = (unsigned long) fn; 	regs.di = (unsigned long) arg;  #ifdef CONFIG_X86_32 	regs.ds = __USER_DS; 	regs.es = __USER_DS; 	regs.fs = __KERNEL_PERCPU; 	regs.gs = __KERNEL_STACK_CANARY; #else 	regs.ss = __KERNEL_DS; #endif  	regs.orig_ax = -1; 	regs.ip = (unsigned long) kernel_thread_helper; 	regs.cs = __KERNEL_CS | get_kernel_rpl(); 	regs.flags = X86_EFLAGS_IF | 0x2;  	/* Ok, create the new process.. */ 	return do_fork(flags | CLONE_VM | CLONE_UNTRACED, 0, &regs, 0, NULL, NULL); } `
+>>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
 ```
 
 从上面的组合的flag可以看出，新的内核线程至少会共享父内核线程的内存地址空间。这样做其实是为了避免赋值调用线程的页表，因为内核线程无论如何都不会访问用户地址空间。CLONE_UNTRACED标志保证内核线程不会被任何进程所跟踪。
@@ -169,8 +208,17 @@ int kernel_thread(int (*fn)(void *), void *arg, unsigned long flags) {
 
 **2. Linux内核设计与实现**
 
+<<<<<<< HEAD
 # 线程那些事儿(2)-实践
 
+=======
+
+
+# 线程那些事儿(2)-实践
+
+
+
+>>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
 在多线程程序中，一个新的线程通常由一个进程调用phtread_create()函数而诞生的。新线程创建后，通常将这个进程称为主线程。你也许会有所迷惑：一个进程怎么会编程线程？此刻有几个线程，几个进程？
 
 其实通过[上文](http://edsionte.com/techblog/archives/3223)对线程、轻量级进程以及线程组之间关系的理解后，这个问题似乎也不难回答。我们可以将所有的进程都看作一个线程组，只不过普通进程的线程组只包含它自己一个线程，它不能与其他线程共享资源，只能独享自己的资源（而成为进程）。
@@ -220,7 +268,11 @@ int *thread(void* arg)
 
 我们带开一个终端（称为终端1）运行上述程序，再另一个终端（称为终端2）里使用ps -eLf命令查看系统当前的线程信息。
 
+<<<<<<< HEAD
 ```
+=======
+```c
+>>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
 1 UID        PID  PPID   LWP  C NLWP STIME TTY          TIME CMD  
 
 2 edsionte  2210  2208  2210  0    1 09:10 pts/0    00:00:00 bash  
@@ -248,5 +300,9 @@ int *thread(void* arg)
 
 **6.通过pid，ppid和LWP的分配情况可以看到，内核对于进程和轻量级进程的id分配是统一管理的，这源于他们使用相同的数据结构task_struct。**
 
+<<<<<<< HEAD
 上述分析基本上用实验结果诠释了进程、线程和轻量级进程之间的关系。
 
+=======
+上述分析基本上用实验结果诠释了进程、线程和轻量级进程之间的关系。
+>>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
