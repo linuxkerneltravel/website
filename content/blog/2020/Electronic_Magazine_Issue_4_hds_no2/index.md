@@ -58,7 +58,7 @@ summary : "对于现代操作系统，系统调用是一种内核与用户空间
 
 ​		不过封装并非必须的，如果你愿意直接调用，Linux内核也提供了一个`syscall()`函数来实现调用，我们看个例子来对比一下通过C库调用和直接调用的区别。
 
-```
+```c
 #include <syscall.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -130,7 +130,7 @@ asmlinkage long sys_getpid(void)
 
 ​		假设我们的程序源文件名为`getpid.c`，内容是：
 
-```
+```c
 #include <syscall.h>
 #include <unistd.h>
 #include <stdio.h>
