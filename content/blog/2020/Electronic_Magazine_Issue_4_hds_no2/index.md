@@ -4,7 +4,7 @@ date: 2020-06-07T20:18:30+08:00
 keywords: ["系统调用"]
 categories : ["系统调用"]
 banner : "img/blogimg/xitongdiaoyong.jpg"
-summary : "对于现代操作系统，系统调用是一种内核与用户空间通讯的普遍手段，Linux系统也不例外。但是Linux系统的系统调用相比很多Unix和windows等系统具有一些独特之处，无处不体现出Linux的设计精髓——简洁和高效。"
+summary : "本期重点和大家讨论系统调用机制。其中涉及到了一些及系统调用的性能、上下文深层问题，同时也穿插着讲述了一些内核调试方法。并 且最后试验部分我们利用系统调用与相关内核服务完成了一个搜集系统调用序列的特定任务，该试验具有较强的实用和教学价值。"
 ---
 
 #### 系统调用
@@ -241,9 +241,9 @@ int main(void) {
 
  
 
-相关代码请下载  [auditexample.tar](http://wwww.kerneltravel.net/journal/iv/auditexample.tar.gz)（实现于2.4.18内核）。
+相关代码请下载  [auditexample.tar](img/auditexample.tar.gz)（实现于2.4.18内核）。
 
-感谢SAL的开发者，例子程序基本框架来自于它们的灵感。
+感谢SAL的开发者，例子程序基本框架来自于他们的灵感。
 
 ------
 
