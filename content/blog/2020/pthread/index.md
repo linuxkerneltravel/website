@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: "Pthread"
 date: 2020-06-08T17:12:56+08:00
@@ -9,7 +8,7 @@ summary : "本文从三个方面讲述进程线程的那些事儿，先介绍了
 ---
 
 =======
->>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
+
 # 线程的那些事儿
 
 ##### 1.线程
@@ -175,7 +174,7 @@ sys_clone(unsigned long clone_flags, unsigned long newsp,
 一个新内核线程的创建是通过在现有的内核线程中使用kernel_thread()而创建的，其本质也是向do_fork()提供特定的flags标志而创建的。
 
 <<<<<<< HEAD
-```c
+​```c
 int kernel_thread(int (*fn)(void *), void *arg, unsigned long flags) { 
 	struct pt_regs regs;  	
 	return do_fork(flags | CLONE_VM | CLONE_UNTRACED, 0, &regs, 0, NULL, NULL);
@@ -191,7 +190,7 @@ int kernel_thread(int (*fn)(void *), void *arg, unsigned long flags) {
 
 ```
 
-```C
+​```C
 `int kernel_thread(int (*fn)(void *), void *arg, unsigned long flags) { 	struct pt_regs regs;  	memset(&regs, 0, sizeof(regs));  	regs.si = (unsigned long) fn; 	regs.di = (unsigned long) arg;  #ifdef CONFIG_X86_32 	regs.ds = __USER_DS; 	regs.es = __USER_DS; 	regs.fs = __KERNEL_PERCPU; 	regs.gs = __KERNEL_STACK_CANARY; #else 	regs.ss = __KERNEL_DS; #endif  	regs.orig_ax = -1; 	regs.ip = (unsigned long) kernel_thread_helper; 	regs.cs = __KERNEL_CS | get_kernel_rpl(); 	regs.flags = X86_EFLAGS_IF | 0x2;  	/* Ok, create the new process.. */ 	return do_fork(flags | CLONE_VM | CLONE_UNTRACED, 0, &regs, 0, NULL, NULL); } `
 >>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
 ```
@@ -271,7 +270,7 @@ int *thread(void* arg)
 <<<<<<< HEAD
 ```
 =======
-```c
+​```c
 >>>>>>> 69c6f203380e2a1d76a8ab1d9b165bec5c1a90dd
 1 UID        PID  PPID   LWP  C NLWP STIME TTY          TIME CMD  
 
