@@ -3,7 +3,7 @@ title: "Linux系统调用"
 date: 2020-06-07T20:18:30+08:00
 keywords: ["系统调用"]
 categories : ["系统调用"]
-banner : "img/blogimg/xitongdiaoyong.png"
+banner : "img/blogimg/xitongdiaoyong.jpg"
 summary : "本期重点和大家讨论系统调用机制。其中涉及到了一些及系统调用的性能、上下文深层问题，同时也穿插着讲述了一些内核调试方法。并 且最后试验部分我们利用系统调用与相关内核服务完成了一个搜集系统调用序列的特定任务，该试验具有较强的实用和教学价值。"
 ---
 
