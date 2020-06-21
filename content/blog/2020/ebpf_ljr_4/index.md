@@ -148,13 +148,8 @@ sudo python tcp4connect.py
 ```
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200621152849336.png)
 可以看到 bcc 程序成功获取到了系统 TCP IPv4连接信息，运行结果中标题解释如下：
-|列标题|含义|
-|-|-|
-|PID|进程号|
-|COMM|进程命令行|
-|SADDR|源地址|
-|DADDR|目标地址|
-|DPORT|目标端口|
+
+![](img/2.png)
 
 参考链接：
 https://lwn.net/Articles/132196/
