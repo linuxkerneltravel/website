@@ -5,7 +5,7 @@ author: "薛晓雯整理"
 keywords: ["字符设备","驱动代码"]
 categories : ["文件系统"]
 banner : "img/blogimg/makefile1.png"
-summary : "内容概要"
+summary : "如果学习Linux下驱动开发，那么本文所述的“在内核中新增驱动代码目录”应该是一个最基本的知识点了。那么如何将自己写好的驱动程序新增到内核？本文将一步一步的教会你。"
 ---
 
 **Step by Step**
