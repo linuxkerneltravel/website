@@ -4,7 +4,7 @@ date: 2020-05-22T20:12:05+08:00
 author: "梁金荣整理"
 keywords: ["Linux内核"]
 categories : ["陈老师博客"]
-banner : "img/blogimg/teacherChen_book.jpg"
+banner : "img/blogimg/ljrimg18.jpg"
 summary : "本文为陈莉君老师翻译的《深入理解Linux内核》一书中的译者序。阅读《深入理解Linux内核》，需要一份耐心，更需要一份执着。当你闯过一道道难关，阅读到本书的最后一章时，会有“蓦然回首，那人却在灯火阑珊处”的感觉！"
 ---
 
