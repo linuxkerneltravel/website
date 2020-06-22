@@ -1,7 +1,7 @@
 ---
 title: "eBPF学习——获取内核网络中的socket信息"
 date: 2020-05-31T14:30:45+08:00
-author: "Jinrong"
+author: "梁金荣"
 keywords: ["eBPF"]
 categories : ["eBPF"]
 banner : "img/blogimg/eBPF.png"

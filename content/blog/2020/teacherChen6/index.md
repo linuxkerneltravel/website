@@ -1,7 +1,7 @@
 ---
 title: "《Linux内核分析与应用》第二章 : 内存寻址导学"
 date: 2020-06-21T14:30:45+08:00
-author: "Jinrong整理"
+author: "作者：陈莉君 编辑：梁金荣"
 keywords: ["Linux内核"]
 categories : ["新手上路"]
 banner : "img/blogimg/ljrimg11.jpg"

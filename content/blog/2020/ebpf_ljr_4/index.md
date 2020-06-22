@@ -1,7 +1,7 @@
 ---
 title: "kprobes/kretprobes 在bcc程序中的使用"
 date: 2020-06-21T14:30:45+08:00
-author: "Jinrong"
+author: "梁金荣"
 keywords: ["eBPF"]
 categories : ["eBPF"]
 banner : "img/blogimg/ljrimg10.jpg"

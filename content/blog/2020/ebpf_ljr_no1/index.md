@@ -2,7 +2,7 @@
 
 title: "eBPF学习——eBPF简介、安装和简单示例"
 date: 2020-05-30T14:30:45+08:00
-author: "Jinrong"
+author: "梁金荣"
 keywords: ["eBPF"]
 categories : ["eBPF"]
 banner : "img/blogimg/eBPF.png"

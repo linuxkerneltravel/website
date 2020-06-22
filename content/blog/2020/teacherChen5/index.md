@@ -1,7 +1,7 @@
 ---
 title: "《Linux内核分析与应用》第一章 : 概述导学"
 date: 2020-06-10T14:30:45+08:00
-author: "Jinrong整理"
+author: "作者：陈莉君 编辑：梁金荣"
 keywords: ["Linux内核"]
 categories : ["新手上路"]
 banner : "img/blogimg/ljrimg1.jpg"
