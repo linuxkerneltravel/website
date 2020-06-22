@@ -146,7 +146,8 @@ int kretprobe__tcp_v4_connect(struct pt_regs *ctx)
 ```bash
 sudo python tcp4connect.py
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200621152849336.png)
+![在这里插入图片描述](img/1.png)
+
 可以看到 bcc 程序成功获取到了系统 TCP IPv4连接信息，运行结果中标题解释如下：
 
 ![](img/2.png)
