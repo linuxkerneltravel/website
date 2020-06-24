@@ -25,9 +25,9 @@ Linux内核之旅社区是一个开源社区，欢迎大家将自己创作的视
 - 关于Linux编程的技术分享
 - 关于Linux和开源社区的项目分享
 
-# 目前已经上传的视频资源
+# 视频资源(持续更新中)
 
+- [暑期2020“大咖说开源”陈莉君：Linux从入门到深入内核有多远](https://www.bilibili.com/video/BV1MC4y1Y78J)
 - [打印进程的虚拟地址空间](https://www.bilibili.com/video/BV1Ua4y1x7sU?p=1)
 - [段页式虚拟内存管理](https://www.bilibili.com/video/BV1Ua4y1x7sU?p=2)
 - [mmap使用与性能优化](https://www.bilibili.com/video/BV1Ua4y1x7sU?p=3)
-- [暑期2020“大咖说开源”陈莉君：Linux从入门到深入内核有多远](https://www.bilibili.com/video/BV1MC4y1Y78J)
