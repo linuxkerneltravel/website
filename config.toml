@@ -67,9 +67,23 @@ paginate = 15
 
 [[menu.main]]
     identifier = "video"
-    name = "内核视频"
+    name = "分享内核视频"
     url  = "/video/"
     weight = 43
+    parent = "shipin"
+
+[[menu.main]]
+    identifier = "lecture"
+    name = "陈老师讲座"
+    url  = "https://www.bilibili.com/video/BV1MC4y1Y78J"
+    weight = 44
+    parent = "shipin"
+
+[[menu.main]]
+    identifier = "experiment"
+    name = "实验楼资源"
+    url  = "https://www.shiyanlou.com/courses/2610"
+    weight = 45
     parent = "shipin"
 
 [[menu.main]]
