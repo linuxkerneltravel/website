@@ -98,7 +98,7 @@ paginate = 15
     weight = 60
 
 [[menu.main]]
-    identifier="books"
+    identifier="bookss"
     name = "陈老师著作"
     weight = 70
 
@@ -106,14 +106,14 @@ paginate = 15
     identifier="book"
     name = "开源书籍"
     url  = "/book/"
-    parent = "books"
+    parent = "bookss"
     weight = 71
 
 [[menu.main]]
     identifier="note"
     name = "读书笔记"
     url  = "/note/"
-    parent = "books"
+    parent = "bookss"
     weight = 72
 
 [[menu.main]]
