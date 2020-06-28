@@ -1,7 +1,7 @@
 ---
 title: "eBPF内核探测中将任意系统调用转换成事件"
 date: 2020-06-07T14:30:45+08:00
-author: "Jinrong"
+author: "梁金荣"
 keywords: ["eBPF"]
 categories : ["eBPF"]
 banner : "img/blogimg/eBPF.png"

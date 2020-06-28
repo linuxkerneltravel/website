@@ -4,7 +4,7 @@ date: 2020-05-20T20:12:05+08:00
 author: "梁金荣整理"
 keywords: ["操作系统"]
 categories : ["陈老师博客"]
-banner : "img/blogimg/teacherChen_book.jpg"
+banner : "img/blogimg/ljrimg20.jpg"
 summary : "如果说现实世界给了我们吃、住、行、玩的有限空间，那么，逻辑或者说虚拟世界就给了我们五彩缤纷的无限空间。一台现实中的计算机，总是只有一个CPU（不包括SMP），有限的内存,一台打印机只归我所用。可是，操作系统认为这样的世界太单调。"
 ---
 

@@ -53,7 +53,7 @@ paginate = 15
 
 [[menu.main]]
     identifier = "mooc"
-    name = "mooc"
+    name = "Linux内核分析与应用"
     url  = "https://next.xuetangx.com/course/XIYOU08091001441/1516763"
     weight = 41
     parent = "shipin"
@@ -67,9 +67,16 @@ paginate = 15
 
 [[menu.main]]
     identifier = "video"
-    name = "内核视频"
+    name = "分享内核视频"
     url  = "/video/"
     weight = 43
+    parent = "shipin"
+
+[[menu.main]]
+    identifier = "lecture"
+    name = "陈老师讲座"
+    url  = "https://www.bilibili.com/video/BV1MC4y1Y78J"
+    weight = 44
     parent = "shipin"
 
 [[menu.main]]
@@ -79,13 +86,19 @@ paginate = 15
     weight = 50
 
 [[menu.main]]
+    identifier = "experiment"
+    name = "实验楼"
+    url  = "https://www.shiyanlou.com/courses/2610"
+    weight = 51
+
+[[menu.main]]
     identifier="magzeine"
     name = "电子杂志"
     url  = "/magazine/"
     weight = 60
 
 [[menu.main]]
-    identifier="books"
+    identifier="bookss"
     name = "陈老师著作"
     weight = 70
 
@@ -93,19 +106,19 @@ paginate = 15
     identifier="book"
     name = "开源书籍"
     url  = "/book/"
-    parent = "books"
+    parent = "bookss"
     weight = 71
 
 [[menu.main]]
     identifier="note"
     name = "读书笔记"
     url  = "/note/"
-    parent = "books"
+    parent = "bookss"
     weight = 72
 
 [[menu.main]]
     identifier = "oldWeb"
-    name = "原网站链接"
+    name = "原网站"
     url  = "http://wwww.kerneltravel.net/"
     weight = 90
 
