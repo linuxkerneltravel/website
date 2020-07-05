@@ -3,8 +3,8 @@ title: "中断解析"
 date: 2020-06-21T10:25:45+08:00
 author: "编辑：张孝家"
 keywords: ["中断"]
-categories : ["中断"]
-banner : "img/blogimg/1.png"
+categories : ["电子杂志"]
+banner : "img/blogimg/zxj0.jpg"
 summary : "本章将向读者依次解释中断概念，解析 Linux 中的中断实现机理以及 Linux 下中断如何被使用。作为实例我们将向第二期中打造的系统中加入一个时钟中断，希望可以帮助读者掌握中断相关的概念和编程方法。"
 ---
 #  1.中断是什么 
