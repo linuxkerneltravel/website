@@ -1,7 +1,7 @@
 ---
 title: "How to do Linux kernel development - take 3 (中文版)"
 date: 2020-07-17T14:30:45+08:00
-author: "梁金荣编辑"
+author: "原作：Greg KH 译者：张乐 编辑：梁金荣"
 keywords: ["Linux"]
 categories : ["Linux"]
 banner : "img/blogimg/ljrimg24.jpg"
