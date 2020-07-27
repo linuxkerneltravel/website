@@ -3,7 +3,7 @@ title: "Linux内核中的红黑树"
 date: 2020-07-12T14:17:52+08:00
 author: "作者：王聪 编辑：张孝家"
 keywords: ["红黑树"]
-categories : ["linux杂谈"]
+categories : ["经验交流"]
 banner : "img/blogimg/zxj0.jpg"
 summary : "这篇文章主要是对红黑树的工作原理做介绍"
 ---

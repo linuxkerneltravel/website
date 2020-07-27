@@ -3,7 +3,7 @@ title: "Linux内核中的循环缓冲区"
 date: 2020-07-20T17:58:40+08:00
 author: "作者：王聪 编辑：张孝家"
 keywords: ["缓冲区"]
-categories : ["linux杂谈"]
+categories : ["经验交流"]
 banner : "img/blogimg/zxj0.jpg"
 summary : "Linux内核中的循环缓冲区（circular buffer）为解决某些特殊情况下的竞争问题提供了一种免锁的方法。这种特殊的情况就是当生产者和消费者都只有一个，而在其它情况下使用它也是必须要加锁的。"
 ---
