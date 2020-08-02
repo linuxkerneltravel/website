@@ -4,8 +4,8 @@ date: 2020-08-02T23:35:52+08:00
 author: "梁金荣整理"
 keywords: ["Linux patches"]
 categories : ["linux"]
-banner : "img/blogimg/24.jpg"
-summary : "内容概要"
+banner : "img/blogimg/ljrimg24.jpg"
+summary : "A frequently asked question on the Linux Kernel Mailing List is how to apply a patch to the kernel or, more specifically, what base kernel a patch for one of the many trees/branches should be applied to. Hopefully this document will explain this to you."
 ---
 
 
@@ -33,9 +33,11 @@ This means that paths to files inside the patch file contain the name of the ker
 Since this is unlikely to match the name of the kernel source dir on your local machine (but is often useful info to see what version an otherwise unlabeled patch was generated against) you should change into your kernel source directory and then strip the first element of the path from filenames in the patch file when applying it (the -p1 argument to patch does this).
 
 To revert a previously applied patch, use the -R argument to patch. So, if you applied a patch like this:
+
 patch -p1 < ../patch-x.y.z
 
 You can revert (undo) it like this:
+
 patch -R -p1 < ../patch-x.y.z
 
 
@@ -43,19 +45,25 @@ patch -R -p1 < ../patch-x.y.z
 
 This (as usual with Linux and other UNIX like operating systems) can be done in several different ways.
 In all the examples below I feed the file (in uncompressed form) to patch via stdin using the following syntax:
+
 patch -p1 < path/to/patch-x.y.z
 
 If you just want to be able to follow the examples below and don't want to know of more than one way to use patch, then you can stop reading this section here.
 
 Patch can also get the name of the file to use via the -i argument, like this:
+
 patch -p1 -i path/to/patch-x.y.z
 
 If your patch file is compressed with gzip or bzip2 and you don't want to uncompress it before applying it, then you can feed it to patch like this instead:
+
 zcat path/to/patch-x.y.z.gz | patch -p1
+
 bzcat path/to/patch-x.y.z.bz2 | patch -p1
 
 If you wish to uncompress the patch file by hand first before applying it (what I assume you've done in the examples below), then you simply run gunzip or bunzip2 on the file -- like this:
+
 gunzip patch-x.y.z.gz
+
 bunzip2 patch-x.y.z.bz2
 
 Which will leave you with a plain text patch-x.y.z file that you can feed to patch via stdin or the -i argument, as you prefer.
@@ -103,6 +111,7 @@ You can use the interdiff program (http://cyberelk.net/tim/patchutils/) to gener
 bzip2 compressed form directly without the use of zcat or bzcat or manual decompression.
 
 Here's how you'd go from 2.6.12.2 to 2.6.12.3 in a single step:
+
 interdiff -z ../patch-2.6.12.2.bz2 ../patch-2.6.12.3.gz | patch -p1
 
 Although interdiff may save you a step or two you are generally advised to do the additional steps since interdiff can get things wrong in some cases.
@@ -116,19 +125,15 @@ Other nice tools are diffstat, which shows a summary of changes made by a patch;
 
 The patches are available at http://kernel.org/ Most recent patches are linked from the front page, but they also have specific homes.
 
-The 2.6.x.y (-stable) and 2.6.x patches live at
-ftp://ftp.kernel.org/pub/linux/kernel/v2.6/
+The 2.6.x.y (-stable) and 2.6.x patches live at ftp://ftp.kernel.org/pub/linux/kernel/v2.6/
 
-The -rc patches live at
-ftp://ftp.kernel.org/pub/linux/kernel/v2.6/testing/
+The -rc patches live at ftp://ftp.kernel.org/pub/linux/kernel/v2.6/testing/
 
-The -git patches live at
-ftp://ftp.kernel.org/pub/linux/kernel/v2.6/snapshots/
+The -git patches live at ftp://ftp.kernel.org/pub/linux/kernel/v2.6/snapshots/
 
-The -mm kernels live at
-ftp://ftp.kernel.org/pub/linux/kernel/people/akpm/patches/2.6/
+The -mm kernels live at ftp://ftp.kernel.org/pub/linux/kernel/people/akpm/patches/2.6/
 
-In place of ftp.kernel.org you can use ftp.cc.kernel.org, where cc is a country code. This way you'll be downloading from a mirror site that's most likely geographically closer to you, resulting in faster downloads for you, less bandwidth used globally and less load on the main kernel.org servers -- these are good things, so do use mirrors when possible.
+In place of ftp.kernel.org you can use ftp.cc.kernel.org, where cc is a country code. This way you'll be  ownloading from a mirror site that's most likely geographically closer to you, resulting in faster downloads for you, less bandwidth used globally and less load on the main kernel.org servers -- these are good things, so do use mirrors when possible.
 
 
 # The 2.6.x kernels
@@ -143,17 +148,27 @@ To apply a patch moving from 2.6.11 to 2.6.12, you'd do the following (note that
 Here are some examples:
 
 #moving from 2.6.11 to 2.6.12
+
 $ cd ~/linux-2.6.11 # change to kernel source dir
+
 $ patch -p1 < ../patch-2.6.12 # apply the 2.6.12 patch
+
 $ cd ..
+
 $ mv linux-2.6.11 linux-2.6.12 # rename source dir
 
 #moving from 2.6.11.1 to 2.6.12
+
 $ cd ~/linux-2.6.11.1 # change to kernel source dir
+
 $ patch -p1 -R < ../patch-2.6.11.1 # revert the 2.6.11.1 patch
+
 #source dir is now 2.6.11
+
 $ patch -p1 < ../patch-2.6.12 # apply new 2.6.12 patch
+
 $ cd ..
+
 $ mv linux-2.6.11.1 linux-2.6.12 # rename source dir
 
 
@@ -173,9 +188,13 @@ These patches are not incremental, meaning that for example the 2.6.12.3 patch d
 Here's a small example:
 
 $ cd ~/linux-2.6.12.2 # change into the kernel source dir
+
 $ patch -p1 -R < ../patch-2.6.12.2 # revert the 2.6.12.2 patch
+
 $ patch -p1 < ../patch-2.6.12.3 # apply the new 2.6.12.3 patch
+
 $ cd ..
+
 $ mv linux-2.6.12.2 linux-2.6.12.3 # rename the kernel source dir
 
 
@@ -193,23 +212,37 @@ So, 2.6.13-rc5 means that this is the fifth release candidate for the 2.6.13 ker
 Here are 3 examples of how to apply these patches:
 
 #first an example of moving from 2.6.12 to 2.6.13-rc3
+
 $ cd ~/linux-2.6.12 # change into the 2.6.12 source dir
+
 $ patch -p1 < ../patch-2.6.13-rc3 # apply the 2.6.13-rc3 patch
+
 $ cd ..
+
 $ mv linux-2.6.12 linux-2.6.13-rc3 # rename the source dir
 
 #now let's move from 2.6.13-rc3 to 2.6.13-rc5
+
 $ cd ~/linux-2.6.13-rc3 # change into the 2.6.13-rc3 dir
+
 $ patch -p1 -R < ../patch-2.6.13-rc3 # revert the 2.6.13-rc3 patch
+
 $ patch -p1 < ../patch-2.6.13-rc5 # apply the new 2.6.13-rc5 patch
+
 $ cd ..
+
 $ mv linux-2.6.13-rc3 linux-2.6.13-rc5 # rename the source dir
 
 #finally let's try and move from 2.6.12.3 to 2.6.13-rc5
+
 $ cd ~/linux-2.6.12.3 # change to the kernel source dir
+
 $ patch -p1 -R < ../patch-2.6.12.3 # revert the 2.6.12.3 patch
+
 $ patch -p1 < ../patch-2.6.13-rc5 # apply new 2.6.13-rc5 patch
+
 $ cd ..
+
 $ mv linux-2.6.12.3 linux-2.6.13-rc5 # rename the kernel source dir
 
 
@@ -225,20 +258,33 @@ named 2.6.13-rc3-git2 applies to the source of the 2.6.13-rc3 kernel.
 Here are some examples of how to apply these patches:
 
 #moving from 2.6.12 to 2.6.12-git1
+
 $ cd ~/linux-2.6.12 # change to the kernel source dir
+
 $ patch -p1 < ../patch-2.6.12-git1 # apply the 2.6.12-git1 patch
+
 $ cd ..
+
 $ mv linux-2.6.12 linux-2.6.12-git1 # rename the kernel source dir
 
 #moving from 2.6.12-git1 to 2.6.13-rc2-git3
+
 $ cd ~/linux-2.6.12-git1 # change to the kernel source dir
+
 $ patch -p1 -R < ../patch-2.6.12-git1 # revert the 2.6.12-git1 patch
+
 #we now have a 2.6.12 kernel
+
 $ patch -p1 < ../patch-2.6.13-rc2 # apply the 2.6.13-rc2 patch
+
 #the kernel is now 2.6.13-rc2
+
 $ patch -p1 < ../patch-2.6.13-rc2-git3 # apply the 2.6.13-rc2-git3 patch
+
 #the kernel is now 2.6.13-rc2-git3
+
 $ cd ..
+
 $ mv linux-2.6.12-git1 linux-2.6.13-rc2-git3 # rename source dir
 
 
@@ -268,19 +314,31 @@ The -mm kernels are not released on a fixed schedule, but usually a few -mm kern
 Here are some examples of applying the -mm patches:
 
 #moving from 2.6.12 to 2.6.12-mm1
+
 $ cd ~/linux-2.6.12 # change to the 2.6.12 source dir
+
 $ patch -p1 < ../2.6.12-mm1 # apply the 2.6.12-mm1 patch
+
 $ cd ..
+
 $ mv linux-2.6.12 linux-2.6.12-mm1 # rename the source appropriately
 
 #moving from 2.6.12-mm1 to 2.6.13-rc3-mm3
+
 $ cd ~/linux-2.6.12-mm1
+
 $ patch -p1 -R < ../2.6.12-mm1 # revert the 2.6.12-mm1 patch
+
 #we now have a 2.6.12 source
+
 $ patch -p1 < ../patch-2.6.13-rc3 # apply the 2.6.13-rc3 patch
+
 #we now have a 2.6.13-rc3 source
+
 $ patch -p1 < ../2.6.13-rc3-mm3 # apply the 2.6.13-rc3-mm3 patch
+
 $ cd ..
+
 $ mv linux-2.6.12-mm1 linux-2.6.13-rc3-mm3 # rename the source dir
 
 
