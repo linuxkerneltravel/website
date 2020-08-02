@@ -4,7 +4,7 @@ date: 2020-08-02T23:35:52+08:00
 author: "梁金荣整理"
 keywords: ["Linux patches"]
 categories : ["linux"]
-banner : "img/blogimg/ljrimg24.jpg"
+banner : "img/blogimg/ljrimg22.jpg"
 summary : "A frequently asked question on the Linux Kernel Mailing List is how to apply a patch to the kernel or, more specifically, what base kernel a patch for one of the many trees/branches should be applied to. Hopefully this document will explain this to you."
 ---
 
