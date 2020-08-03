@@ -12,7 +12,7 @@ summary : "使用eBPF&bcc提取内核网络流量信息（一）已经将流量�
 
 上次我们使用kprobe挂接了两个重要的函数，分别是`tcp_sendmsg`和`tcp_cleanup_rbuf`，下面我们结合源码进行解读。为什么要挂接`tcp_sendmsg`，我们先看这个图：
 
-![](/img/1.png)
+![](img/1.png)
 
 网络数据包的发送过程起始于应用层的函数调用，随后会调用`tcp_sendmsg`函数，层层调用到`tcp_transmit_skb`函数完成TCP协议处理，封闭tcp包头，最后调用ip层的`ip_queue_xmit`方法。
 
@@ -439,7 +439,7 @@ while i != args.count and not exiting:
 ```
 我们来运行一下，查看运行结果：
 
-![](/img/2.png)
+![](img/2.png)
 
 发现统计的源地址、源端口、目的地址、目的端口均为0，这是为何？
 提取失败时，不要慌，问题不大，我们检查代码，逐步排除问题。经过较长时间的排查与实践，我终于发现是数据封装时出现了问题，正确的封装关键代码如下：
@@ -460,7 +460,7 @@ Increments the key's value by increment_amount, which defaults to 1. Used for hi
 
 我们再次运行bcc程序，结果如下：
 
-![](/img/3.png)
+![](img/3.png)
 
 可以看到，除了之前提的流量信息，我们已经成功地提取出源地址、目的地址、源端口、目的端口等信息。
 
