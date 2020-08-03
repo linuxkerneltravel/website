@@ -12,11 +12,11 @@ summary : "使用eBPF&bcc提取内核网络流量信息（一）已经将流量�
 
 上次我们使用kprobe挂接了两个重要的函数，分别是`tcp_sendmsg`和`tcp_cleanup_rbuf`，下面我们结合源码进行解读。为什么要挂接`tcp_sendmsg`，我们先看这个图：
 
-![](img/1.png)
+<img src="img/1.png" style="zoom:60%;">
 
 网络数据包的发送过程起始于应用层的函数调用，随后会调用`tcp_sendmsg`函数，层层调用到`tcp_transmit_skb`函数完成TCP协议处理，封闭tcp包头，最后调用ip层的`ip_queue_xmit`方法。
 
-接下来看看在传输层报文生成的实现，详细过程请看代码注释：
+接下来看看在传输层报文生成的实现，只详细分析此函数，其他函数在此不一一讨论，详细过程请看代码注释：
 ```c
 int tcp_sendmsg(struct kiocb *iocb, struct sock *sk, struct msghdr *msg,
 		size_t size)
