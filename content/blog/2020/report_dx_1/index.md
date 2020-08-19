@@ -5,7 +5,7 @@ author: "董旭"
 keywords: ["网络工具","流量分析"]
 categories : ["网络性能"]
 banner : "img/blogimg/dx1.jpg"
-summary : "传统的性能工具可以显示数据包速率、各种事件和吞吐量的内核统计信息，并显示打开的套接字的状态。除了解决问题之外，传统工具还可以为指导我们进一步使用BPF工具提供线索。"
+summary : "通过学习《BPF Performance Tools》，对Tradition Tools涉及到的常用的网络性能工具进行一下总结和列举使用。"
 ---
 
 通过学习《BPF Performance Tools》，对Tradition Tools涉及到的常用的网络性能工具进行一下总结和列举使用。传统的性能工具可以显示数据包速率、各种事件和吞吐量的内核统计信息，并显示打开的套接字的状态。除了解决问题之外，传统工具还可以为指导我们进一步使用BPF工具提供线索。
