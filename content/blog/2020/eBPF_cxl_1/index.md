@@ -38,7 +38,7 @@ summary : "本文主要介绍eBPF的安装clang和llvm的过程，如何编写eB
 
 方法：将虚拟机的内存扩大到8G，如下图
 
-![6](C:/Users/CXL/Desktop/eBPF_cxl1/img/6.png)
+![6](img/6.png)
 
 先删除build文件夹下的内容，防止磁盘不够用，可能是因为再次安装依赖的时候，会占用多余的空间，最好一次性安装完成；
 
@@ -50,11 +50,11 @@ summary : "本文主要介绍eBPF的安装clang和llvm的过程，如何编写eB
 
  (2)可能还会再运行到80%左右，出现磁盘空间不足的情况
 
-<img src="C:/Users/CXL/Desktop/eBPF_cxl1/img/7.png" style="zoom:80%;" />
+<img src="img/7.png" style="zoom:60%;" />
 
 1）查看磁盘使用情况：
 
-<img src="C:/Users/CXL/Desktop/eBPF_cxl1/img/8.png" style="zoom:80%;" />
+<img src="img/8.png" style="zoom:60%;" />
 
 说明主磁盘分区/dev/sda1显然不够使用了，必须增加其容量
 
@@ -62,7 +62,7 @@ summary : "本文主要介绍eBPF的安装clang和llvm的过程，如何编写eB
 
 虚拟机关机=》开机=》点击虚拟机=》设置
 
-<img src="C:/Users/CXL/Desktop/eBPF_cxl1/img/9.png" style="zoom:80%;" />
+<img src="img/9.png" style="zoom:60%;" />
 
 点击硬盘=》点击扩展容量=》输入总共的磁盘大小（建议50G以上）
 
@@ -70,21 +70,21 @@ summary : "本文主要介绍eBPF的安装clang和llvm的过程，如何编写eB
 
 命令：apt install gparted
 
-<img src="C:/Users/CXL/Desktop/eBPF_cxl1/img/10.png" style="zoom:80%;" />
+<img src="img/10.png" style="zoom:60%;" />
 
 再ubuntu应用中找到gparted
 
-<img src="C:/Users/CXL/Desktop/eBPF_cxl1/img/11.png" style="zoom:80%;" />
+<img src="img/11.png" style="zoom:80%;" />
 
 点击/dev/sda1 => 扩展磁盘大小(拖动或者手动输入大小都可以)
 
-<img src="C:/Users/CXL/Desktop/eBPF_cxl1/img/12.png" style="zoom:80%;" />
+<img src="img/12.png" style="zoom:80%;" />
 
 点击确定
 
 再次查看磁盘的使用情况：df -h
 
-<img src="C:/Users/CXL/Desktop/eBPF_cxl1/img/13.png" style="zoom:80%;" />
+<img src="img/13.png" style="zoom:80%;" />
 
  已将磁盘分区/dev/sda1扩展到54G了，可以正常使用
 
@@ -100,19 +100,19 @@ summary : "本文主要介绍eBPF的安装clang和llvm的过程，如何编写eB
 
 （3）   size:表示bpf_attr 的union的大小（以字节为单位）
 
-<img src="C:/Users/CXL/Desktop/eBPF_cxl1/img/1.png" style="zoom:80%;" />
+<img src="img/1.png" style="zoom:80%;" />
 
 4 eBPF 程序的类型
 
-<img src="C:/Users/CXL/Desktop/eBPF_cxl1/img/2.png" style="zoom:80%;" />
+<img src="img/2.png" style="zoom:80%;" />
 
 5 编写eBPF程序
 
-![在这里插入图片描述](C:/Users/CXL/Desktop/eBPF_cxl1/img/3.png)
+![在这里插入图片描述](img/3.png)
 
 6 eBPF的工作流程
 
-<img src="C:/Users/CXL/Desktop/eBPF_cxl1/img/4.png" style="zoom:80%;" />
+<img src="img/4.png" style="zoom:80%;" />
 
  
 
