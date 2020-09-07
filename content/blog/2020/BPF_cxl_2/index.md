@@ -5,7 +5,7 @@ author: "陈小龙"
 keywords: ["BPF","内核"]
 categories : ["BPF"]
 banner : "img/blogimg/cxl_2.jpg"
-summary : "编译运行linux中的内核源码中的BPF代码,使make过程出现的问题和相应的解决办法和自己如何在Makefile中添加自己的.c文件,然后生成自己的需要的目标文件和可执行文件"
+summary : "编译运行linux中的内核源码中的BPF代码,使用make过程出现的问题及相应的解决办法和自己如何在Makefile中添加自己的.c文件,然后生成自己的需要的目标文件和可执行文件"
 ---
 
 1、 下载内核linux内核源码
