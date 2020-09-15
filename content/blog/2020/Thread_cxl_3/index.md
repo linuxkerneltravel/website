@@ -4,13 +4,9 @@ date: 2020-09-15T19:00:57+08:00
 author: "陈小龙"
 keywords: ["linux","mutex"]
 categories : ["你的分类标题"]
-banner : "img/blogimg/default.png"
+banner : "img/blogimg/cxl_3"
 summary : "本文章主要介绍了linux中多线程编程，对于多线程同时访问临界资源产生的冲突，利用互斥锁机制解决，对于互斥锁的引入可能会产生的死锁和饥饿，针对这两个问题给出了具体的解决办法。"
 ---
-
-标题：linux下的多线程的使用
-
-内容：本文章主要介绍了linux中多线程编程，对于多线程同时访问临界资源产生的冲突，利用互斥锁机制解决，对于互斥锁的引入可能会产生的死锁和饥饿，给出了具体的解决办法。
 
  本文章介绍的主要介绍图：
 
@@ -66,15 +62,15 @@ void *add(void *)
 
 }
 
-结果一：
+实验结果一：
 
 ![img](img/2.png)
 
-结果二：
+实验结果二：
 
 ![img](img/3.png)
 
-结果三：
+实验结果三：
 
 ![img](img/4.png)
 
@@ -285,7 +281,3 @@ Int sem_post(sem_t *sem);//信号量的V操作
 4>销毁信号量
 
 Int sem_destroy(sem_t *sem);
-
- 
-
- 
