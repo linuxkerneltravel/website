@@ -3,7 +3,7 @@ title: "linux下的多线程的使用"
 date: 2020-09-15T19:00:57+08:00
 author: "陈小龙"
 keywords: ["linux","mutex"]
-categories : ["你的分类标题"]
+categories : ["线程的使用"]
 banner : "img/blogimg/cxl_3.jpg"
 summary : "本文章主要介绍了linux中多线程编程，对于多线程同时访问临界资源产生的冲突，利用互斥锁机制解决，对于互斥锁的引入可能会产生的死锁和饥饿，针对这两个问题给出了具体的解决办法。"
 ---
