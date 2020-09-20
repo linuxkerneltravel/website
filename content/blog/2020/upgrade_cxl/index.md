@@ -4,7 +4,7 @@ date: 2020-09-20T17:10:36+08:00
 author: "作者helight0,陈小龙整理"
 keywords: ["ubuntu","内核升级"]
 categories : ["新手上路"]
-banner : "img/blogimg/default.png"
+banner : "img/blogimg/cxl_5.jpg"
 summary : "本文主要介绍了ubuntu内核的升级，包括一下四个步骤，分别是安装必要的工具包，查看ubuntu的内核版本，下载需要升级到的的内核版本，开始编译等过程"
 ---
 
