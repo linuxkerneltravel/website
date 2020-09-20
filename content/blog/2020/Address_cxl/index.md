@@ -4,7 +4,7 @@ date: 2020-09-20T11:08:07+08:00
 author: "作者admin001,陈小龙整理"
 keywords: [“页表"]
 categories : ["走进内核"]
-banner : "img/blogimg/default.png"
+banner : "img/blogimg/cxl_4.jpg"
 summary : "分页机制是硬件对分页的支持，这是虚拟内存管理的硬件基础。要想使这种硬件机制充分发挥其功能，必须有相应软件的支持，我们来看一下Linux所定义的一些主要数据结构，其分布在include/asm-i386/目录下的page.h，pgtable.h及pgtable-2level.h三个文件中。 "
 
 ---
