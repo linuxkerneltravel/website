@@ -3,7 +3,7 @@ title: "千呼万唤始出来――Linux"
 date: 2020-07-05T18:16:49+08:00
 author: "白嘉庆整理"
 keywords: ["操作系统","入门"]
-categories : ["LINUX杂谈"]
+categories : ["电子杂志"]
 banner : "img/blogimg/ljrimg19.jpg"
 summary : "讲了这么多，终于开始进入Linux这个主题了；等了这么久，终于有人为操作系统提供一种非MS Windows的选择了。"
 ---
