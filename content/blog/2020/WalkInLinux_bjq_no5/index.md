@@ -3,7 +3,7 @@ title: "安得倚天抽宝剑——搭建实验系统"
 date: 2020-07-18T22:06:45+08:00
 author: "白嘉庆整理"
 keywords: ["操作系统","入门"]
-categories : ["LINUX杂谈"]
+categories : ["电子杂志"]
 banner : "img/blogimg/ljrimg17.jpg"
 summary : "求知和求实是程序员的天性，我们当然有义务满足自己的天性，所以，相关的实践必需在此展开。可是，我们到底要实践些什么呢？ 不如从搭建Linux系统开始。"
 ---

@@ -38,6 +38,36 @@ paginate = 15
     name = "博客"
     url  = "/blog/"
     weight = 20
+[[menu.main]]
+    identifier="allblog"
+    name = "所有博客"
+    url  = "/blog/"
+    weight = 21
+    parent = "blog"  
+[[menu.main]]
+    identifier="beginner"
+    name = "新手上路"
+    url  = "http://kerneltravel.net/categories/%E6%96%B0%E6%89%8B%E4%B8%8A%E8%B7%AF/"
+    weight = 22
+    parent = "blog"     
+[[menu.main]]
+    identifier="kernel"
+    name = "走进内核"
+    url  = "http://kerneltravel.net/categories/%E8%B5%B0%E8%BF%9B%E5%86%85%E6%A0%B8/"
+    weight = 23
+    parent = "blog"    
+[[menu.main]]
+    identifier="experience"
+    name = "经验交流"
+    url  = "http://kerneltravel.net/categories/%E7%BB%8F%E9%AA%8C%E4%BA%A4%E6%B5%81/"
+    weight = 24
+    parent = "blog"    
+[[menu.main]]
+    identifier="magzeine"
+    name = "电子杂志"
+    url  = "http://kerneltravel.net/categories/%E7%94%B5%E5%AD%90%E6%9D%82%E5%BF%97/"
+    weight = 25
+    parent = "blog"
 
 [[menu.main]]
     identifier = "github"
@@ -90,12 +120,6 @@ paginate = 15
     name = "实验楼"
     url  = "https://www.shiyanlou.com/courses/2610"
     weight = 51
-
-[[menu.main]]
-    identifier="magzeine"
-    name = "电子杂志"
-    url  = "/magazine/"
-    weight = 60
 
 [[menu.main]]
     identifier="bookss"
