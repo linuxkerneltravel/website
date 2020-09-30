@@ -3,8 +3,8 @@ title: "proc文件系统探索 之 以数字命名的目录[二]"
 date: 2020-09-29T21:21:15+08:00
 author: "陈小龙转"
 keywords: ["proc"]
-categories : ["新手上路"]
-banner : "img/blogimg/default.png"
+categories : ["走进内核"]
+banner : "img/blogimg/7.jpg"
 summary : "cmd目录链接:该目录链接指向该进程运行的当前路径。该符号链接虽然使用ls命令查看其权限是对所有用户都有权限，但实际中是只有启动该进程的用户才具有读写的权限，其他用户不具有一切权限。该链接指向该进程运行的当前路径，例如我们在用户目录下启动该进程，那么cwd就指向用户目录。"
 ---
 
