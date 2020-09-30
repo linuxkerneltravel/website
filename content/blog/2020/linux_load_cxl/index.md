@@ -4,7 +4,7 @@ date: 2020-09-30T20:58:21+08:00
 author: "admin001,陈小龙转"
 keywords: ["linux","内核模块"]
 categories : ["走进内核"]
-banner : "img/blogimg/10.jpg"
+banner : "img/blogimg/cxl_10.jpg"
 summary : "Linux 可加载内核模块剖析"
 ---
 

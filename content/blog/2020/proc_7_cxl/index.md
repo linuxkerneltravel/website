@@ -4,7 +4,7 @@ date: 2020-09-29T21:21:25+08:00
 author: "吴刚，陈小龙转"
 keywords: ["proc","root"]
 categories : ["走进内核"]
-banner : "img/blogimg/9.jpg"
+banner : "img/blogimg/cxl_9.jpg"
 summary : "主要参考内核文档和红帽文档对 > cat /proc/meminfo   读出的内核信息进行解释， 下篇文章会简单对读出该信息的代码进行简单的分析。"
 ---
 
