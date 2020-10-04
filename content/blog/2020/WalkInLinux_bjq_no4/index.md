@@ -3,7 +3,7 @@ title: "Linux系统启动的标准流程"
 date: 2020-07-18T19:26:14+08:00
 author: "白嘉庆整理"
 keywords: ["操作系统","入门"]
-categories : ["LINUX杂谈"]
+categories : ["电子杂志"]
 banner : "img/blogimg/ljrimg18.jpg"
 summary : "系统的启动是指从计算机加电到显示用户登陆提示的整个过程。我们将在这里对整个流程以及关系到的一些内容做讨论。"
 ---
