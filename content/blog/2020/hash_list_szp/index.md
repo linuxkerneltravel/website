@@ -4,7 +4,7 @@ date: 2020-09-28T22:59:07+08:00
 author: "孙张品"
 keywords: ["哈希表","HashList"]
 categories : ["走进内核"]
-banner : "img/blogimg/default.png"
+banner : "img/blogimg/2.png"
 summary : "Linux内核中选取双向链表作为其基本的数据结构，并将其嵌入到其他的数据结构中，使得其他的数据结构不必再一一实现其各自的双链表结构。实现了双链表结构的统一，同时可以演化出其他复杂数据结构。"
 ---
 
