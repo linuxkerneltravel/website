@@ -5,7 +5,7 @@ author: "helight0"
 keywords: ["wechat","Linux"]
 categories : ["经验交流"]
 banner : "img/blogimg/linux_wechat.png"
-summary : "十几年前，也就是2004年，那些在Linux内核方面已经驰骋5年的学生以分享知识的情怀申请域名，购买空间，创办了“Linux内核之旅”（http://http://wwww.kerneltravel.net//）网站"
+summary : "十几年前，也就是2004年，那些在Linux内核方面已经驰骋5年的学生以分享知识的情怀申请域名，购买空间，创办了“Linux内核之旅”网站，并撰写了电子杂志的系列文章： 第一期《走入Linux 世界》 "
 ---
 
 十几年前，也就是2004年，那些在Linux内核方面已经驰骋5年的学生以分享知识的情怀申请域名，购买空间，创办了“Linux内核之旅”（http://http://wwww.kerneltravel.net//）网站，并撰写了电子杂志的系列文章： 第一期《走入Linux 世界》 

@@ -5,7 +5,7 @@ author: "樊颖飞"
 keywords: ["Timer","Linux"]
 categories : ["新手上路"]
 banner : "img/blogimg/io_sys_szp.jpg"
-summary : "Linux定时器使用"
+summary : "Linux定时器使用，定时器在内核的定义，使用定时器的步骤，运行结果。"
 ---
 
 定时器在内核的定义： 
