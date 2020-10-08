@@ -3,7 +3,7 @@ title: "linux中对Task_struct结构体的注释"
 date: 2020-10-05T20:37:30+08:00
 author: "陈小龙"
 keywords: ["linux","task_struct"]
-categories : ["对内核结构体task_struct的了解及使用"]
+categories : ["linux"]
 banner : "img/blogimg/cxl_13.jpg"
 summary : "本文主要对linux内核中的task_struct结构体进行成员的分析，主要包括调度的数据成员、进程队列指针、进程标识、进程队列的全局变量等13个部分。"
 ---
