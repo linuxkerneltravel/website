@@ -1,11 +1,11 @@
 ---
 title: "Linux 可加载内核模块剖析"
 date: 2020-09-30T20:58:21+08:00
-author: "admin001,陈小龙转"
+author: "作者：admin001,陈小龙转"
 keywords: ["linux","内核模块"]
 categories : ["走进内核"]
 banner : "img/blogimg/cxl_10.jpg"
-summary : "Linux 可加载内核模块剖析"
+summary : "Linux可加载内核模块（从内核的 1.2 版本开始引入）是 Linux 内核的最重要创新之一。它们提供了可伸缩的、动态的内核。探索隐藏在可加载模块后面的原理，并学习这些独立的对象如何动态地转换成 Linux 内核的一部分。"
 ---
 
 Linux 可加载内核模块剖析
