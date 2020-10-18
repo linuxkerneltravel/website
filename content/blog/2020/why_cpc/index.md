@@ -1,4 +1,4 @@
-﻿---
+---
 title: "为什么软件不应该有所有者？"
 date: 2020-06-11T04:30:01+08:00
 author: "Richard Stallman"
@@ -7,6 +7,7 @@ categories : ["新手上路"]
 banner : "img/blogimg/check_path.jpg"
 summary : "提出为什么软件不应该有所有者的问题，并给出了详细的分析，值得读者阅读。"
 ---
+
 **作者：Richard Stallman**
 
 **为什么软件不应该有所有者**

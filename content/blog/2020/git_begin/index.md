@@ -1,6 +1,6 @@
 ---
 title : "Ubuntu下快速使用Git"
-date : "2020-04-10T13:47:08+02:00"
+date : 2020-04-10T13:47:08+02:00
 author: "梁金荣"
 keywords: ["git"]
 categories : ["git"]
