@@ -1,4 +1,4 @@
----
+﻿---
 title: "论window和Linux之长短"
 date: 2020-06-28T22:41:43+08:00
 author: "作者：王垠，编辑：崔鹏程"
@@ -7,7 +7,6 @@ categories : ["Linux杂谈"]
 banner : "img/blogimg/cpc1.jpg"
 summary : "作者讨论了window和Linux的长短，带领大家理解 GNU/Linux，介绍了Linux的各种各样的优点和功能，而这些优点也是Window不能及的，还介绍了Window下的中国计算机教育，呼吁我们摒弃Window，使用Linux。"
 ---
-
 ## 论window和Linux之长短
 
 **王垠**
