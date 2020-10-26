@@ -1,7 +1,7 @@
 ---
 title: "linux内核空间与用户空间信息交互方法"
 date: 2020-08-02T23:58:23+08:00
-author: "作者：康华 编辑：梁金荣"
+author: "梁金荣整理"
 keywords: ["内核空间","用户空间"]
 categories : ["linux"]
 banner : "img/blogimg/ljrimg24.jpg"
