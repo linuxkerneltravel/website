@@ -4,7 +4,7 @@ date: 2020-10-26T10:07:28+08:00
 author: "梁金荣"
 keywords: ["内核网络"]
 categories : ["内核网络"]
-banner : "img/blogimg/ljrimg20.jpg"
+banner : "img/blogimg/ljrimg17.jpg"
 summary : "Linux内核网络 UDP 协议层通过调用 ip_send_skb 将 skb 交给 IP 协议层，本文通过分析内核 IP 协议层的关键函数来分享内核数据包发送在 IP 协议层的处理，并分享了监控IP层的方法。"
 ---
 
