@@ -10,6 +10,7 @@ defaultContentLanguage = "zh"
 pygmentsUseClasses = false
 pygmentCodeFences = true
 
+
 [Permalinks]
     # blog = "/blog/:year/:month/:day/:filename/"
     blog = "/blog/:year/:filename/"
@@ -223,6 +224,9 @@ paginate = 15
     logo = "img/logo.png"
     logo_small = "img/logo-small.png"
 
+
+	# 是否开启评论功能
+	gitalk = true
 
 # Enable or disable top bar with social icons
 [params.topbar]
