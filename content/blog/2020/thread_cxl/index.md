@@ -3,9 +3,9 @@ title: "进程的创建及过程分析"
 date: 2020-09-30T23:09:09+08:00
 author: "陈小龙"
 keywords: ["fork"]
-categories : ["进程的简单使用"]
+categories : ["走进内核"]
 banner : "img/blogimg/cxl_11.jpg"
-summary : "本文章主要介绍了通过fork()创建进程，以及对运行的结果做了分析，并总结出fork()创建进程数的数量公式，进行相应的扩展"
+summary : "本文章主要介绍了通过fork()进行进程的创建，以及对进程的结果做了分析，并总结出fork()创建进程数的数量公式，进行相应的扩展。"
 ---
 
 进程创建代码：

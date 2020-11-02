@@ -3,7 +3,7 @@ title: "linux中编译C/C++指定头文件和链接库的搜索路径"
 date: 2020-10-04T08:39:55+08:00
 author: "陈小龙"
 keywords: ["linux","C/C++"]
-categories : ["路径搜索"]
+categories : ["linux"]
 banner : "img/blogimg/cxl_12.jpg"
 summary : "本文主要介绍了C/C++头文件#include的搜索路径、linux系统默认头文件存放的路径、在编译时静态链接、动态链接的搜索路径及搜索顺序，也可以自己添加文件的路径使源代码能够生成对应的目标文件。"
 ---
