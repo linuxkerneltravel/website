@@ -1,36 +1,45 @@
 #!/usr/bin/env python3
-
 import glob
 import frontmatter
 import datetime
 import pytz
 utc=pytz.UTC
 
-
 author_list=[]
 date_list=[]
 near_date_list=[]
 day_time = 7    #7天内文章，可修改
 
-
-
 now = datetime.datetime.now()
 last_time = now - datetime.timedelta(day_time) 
 now = now.replace(tzinfo=utc)  #在服务器上需要打开，添加时区功能
+line = "<br>========================================"
 
 
 def main():
     files = glob.glob('../content/blog/2020/*/index.md')
-    print("\n\n\n最近%d天内提交文章详情:"%day_time,"%d-%d-%d"%(last_time.year,last_time.month,last_time.day),'>>',"%d-%d-%d"%(now.year,now.month,now.day))
-    print("========================================")
-    #print(last_time.date,"--",now.date)
+    ly = str(last_time.year)
+    lm = str(last_time.month)
+    ld = str(last_time.day)
+    ny = str(now.year)
+    nm = str(now.month)
+    nd = str(now.day)
+    lastday = ly+'-'+ lm+'-'+ ld
+    today = ny+'-'+nm+'-'+ nd
+    date = lastday + ">>>" +today
+    with open("author_count.html","w") as html:
+        html.write("near 7 days commit:<br>")
+        html.write(date)
+        html.write(line)
     for f in files:
         get_author(f)
         get_date(f)
-    #count_num(author_list)
-   # print("====================")
-    print("\n\n累计提交文章详情：")
-    print("====================")
+    
+    with open("author_count.html","a") as html:
+        html.write("<br><br>累计提交文章详情:")
+        html.write(line)
+        html.write("<br> 文章数 &emsp; &emsp; 作者")
+        html.write(line)
     format_print(count_num(author_list))
 
 def get_author(md_file):    
@@ -39,17 +48,18 @@ def get_author(md_file):
 
 def compare_time(file_time,md):
     if (((now - date_list[-1]).days)<=day_time):
-         print("%d-%d-%d"%(file_time.year,file_time.month,file_time.day),"-",md.get('title'),"-",md.get('author'))
-         print()
+        write_date = str(file_time.year)+'-'+str(file_time.month)+'-'+str(file_time.day)
+        title = str(md.get('title'))
+        author = str(md.get('author'))
+        txt = '<br>'+write_date+' -- '+title+' -- '+author+'<br>'
+        with open("author_count.html","a") as html:
+            html.write(txt)
+
 def get_date(md_file):
     md = frontmatter.load(md_file)
     date_list.append(md.get('date'))
     file_time = md.get('date')
     compare_time(file_time,md)
-    
-   # print(now)
-   # print(date_list[-1])
-
 
 
 
@@ -61,11 +71,12 @@ def count_num(arr):
 
 def format_print(print_list):
     print_list=sorted(print_list.items(),key=lambda d:d[1],reverse=True) #按值来排序 如果是False 则为正序
-    # print(author_list)
-    print(" 作者     文章数")
-    print("=================")
     for index, val in enumerate(print_list):
-        print(val[1],"\t-", val[0])
+        count = str(val[1])
+        author = str(val[0])
+        txt = '<br>'+count + "&emsp;&emsp;&emsp;&emsp;-" +author
+        with open("author_count.html","a") as html:
+            html.write(txt)
 
 
 if __name__ == '__main__':
