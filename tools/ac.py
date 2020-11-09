@@ -3,6 +3,8 @@ import glob
 import frontmatter
 import datetime
 import pytz
+#from datetime import datetime, timezone
+
 utc=pytz.UTC
 
 author_list=[]
@@ -12,7 +14,6 @@ day_time = 7    #7天内文章，可修改
 
 now = datetime.datetime.now()
 last_time = now - datetime.timedelta(day_time) 
-now = now.replace(tzinfo=utc)  #在服务器上需要打开，添加时区功能
 line = "<br>========================================"
 
 
@@ -27,15 +28,16 @@ def main():
     lastday = ly+'-'+ lm+'-'+ ld
     today = ny+'-'+nm+'-'+ nd
     date = lastday + ">>>" +today
-    with open("author_count.html","w") as html:
-        html.write("near 7 days commit:<br>")
+    with open("ac.html","w") as html:
+        
+        html.write("最近7天提交详情<br>")
         html.write(date)
         html.write(line)
     for f in files:
         get_author(f)
         get_date(f)
     
-    with open("author_count.html","a") as html:
+    with open("ac.html","a") as html:
         html.write("<br><br>累计提交文章详情:")
         html.write(line)
         html.write("<br> 文章数 &emsp; &emsp; 作者")
@@ -52,9 +54,9 @@ def compare_time(file_time,md):
         title = str(md.get('title'))
         author = str(md.get('author'))
         txt = '<br>'+write_date+' -- '+title+' -- '+author+'<br>'
-        with open("author_count.html","a") as html:
+        with open("ac.html","a") as html:
             html.write(txt)
-
+    
 def get_date(md_file):
     md = frontmatter.load(md_file)
     date_list.append(md.get('date'))
@@ -75,7 +77,7 @@ def format_print(print_list):
         count = str(val[1])
         author = str(val[0])
         txt = '<br>'+count + "&emsp;&emsp;&emsp;&emsp;-" +author
-        with open("author_count.html","a") as html:
+        with open("ac.html","a") as html:
             html.write(txt)
 
 
