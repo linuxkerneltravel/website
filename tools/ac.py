@@ -29,7 +29,7 @@ def main():
     today = ny+'-'+nm+'-'+ nd
     date = lastday + ">>>" +today
     with open("ac.html","w") as html:
-        
+        html.write("<meta charset="utf-8">")
         html.write("最近7天提交详情<br>")
         html.write(date)
         html.write(line)
