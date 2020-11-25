@@ -224,6 +224,9 @@ paginate = 15
     logo = "img/logo.png"
     logo_small = "img/logo-small.png"
 
+    # avatar used for thumbnail on sharing
+    # avatar = "/img/logo.png"
+    address = """<p><a href='https://synestiaos.org'>SynestiaOS</p>"""
 
 	# 是否开启评论功能
 	gitalk = true
