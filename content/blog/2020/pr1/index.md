@@ -2,7 +2,7 @@
 
 title: "linux spinlock/rwlock/seqlock原理剖析（基于ARM64）"
 date: 2020-06-10T14:30:45+08:00
-author: "LoyenWang"
+author: "作者：LoyenWang 编辑：梁金荣"
 keywords: ["自旋锁"]
 categories : ["内核同步"]
 banner : "img/blogimg/spinlock.png"

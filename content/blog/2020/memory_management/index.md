@@ -1,7 +1,7 @@
 ---
 title: "Linux内存管理"
 date: 2020-06-07T14:30:45+08:00
-author: "Jinrong"
+author: "梁金荣整理"
 keywords: ["内存管理"]
 categories : ["电子杂志"]
 banner : "img/blogimg/memory.jpg"
