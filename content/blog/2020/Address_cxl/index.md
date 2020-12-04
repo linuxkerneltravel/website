@@ -1,7 +1,7 @@
 ---
 title: "虚地址转换为物理地址"
 date: 2020-09-20T11:08:07+08:00
-author: "作者admin001,陈小龙整理"
+author: "陈小龙整理"
 keywords: [“页表"]
 categories : ["走进内核"]
 banner : "img/blogimg/cxl_4.jpg"

@@ -1,7 +1,7 @@
 ---
 title: "虚拟内存管理实例"
 date: 2020-11-23T10:42:47+08:00
-author: "admin001—梁鹏转"
+author: "梁鹏整理"
 keywords: ["内存管理"]
 categories : ["走进内核"]
 banner : "img/blogimg/linux_wechat.png"
