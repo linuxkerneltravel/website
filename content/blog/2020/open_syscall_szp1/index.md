@@ -26,7 +26,6 @@ long do_sys_open(int dfd, const char __user *filename, int flags, int mode)
         //将文件路径从用户空间拷贝到内核空间。
 	char *tmp = getname(filename);
 
-
 	int fd = PTR_ERR(tmp);
 
 	if (!IS_ERR(tmp)) {

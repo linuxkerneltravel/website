@@ -24,7 +24,6 @@ static struct file * path_openat(struct nameidata * nd,
 	...
   	// 路径初始化，确定查找的起始目录，初始化结构体 nameidata 的成员 path。
 	s = path_init(nd, flags);
-
   	// 调用函数 link_path_walk 解析文件路径的每个分量，最后一个分量除外。
   	// 调用函数 do_last，解析文件路径的最后一个分量，并且打开文件。
 	while (! (error = link_path_walk(s, nd)) && (error = do_last(nd, file, op, &opened)) > 0) {
