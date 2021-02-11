@@ -1,7 +1,7 @@
 ---
 title: "《高效入门eBPF》直播背后的有趣故事"
 date: 2021-02-08T14:30:45+08:00
-author: "贺东升"
+author: "作者：贺东升 编辑：梁金荣"
 keywords: ["eBPF"]
 categories : ["eBPF"]
 banner : "img/blogimg/ebpf_beginner.jpg"
