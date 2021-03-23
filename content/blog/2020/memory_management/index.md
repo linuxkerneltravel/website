@@ -1,9 +1,9 @@
 ---
 title: "Linux内存管理"
 date: 2020-06-07T14:30:45+08:00
-author: "Jinrong"
+author: "梁金荣整理"
 keywords: ["内存管理"]
-categories : ["内存管理"]
+categories : ["电子杂志"]
 banner : "img/blogimg/memory.jpg"
 summary : "本章首先以应用程序开发者的角度审视Linux的进程内存管理，在此基础上逐步深入到内核中讨论系统物理内存管理和内核内存的使用方法。力求从外到内、水到渠成地引导网友分析Linux的内存管理与使用。在本章最后，我们给出一个内存映射的实例，帮助网友们理解内核内存管理与用户内存管理之间的关系，希望大家最终能驾驭Linux内存管理。"
 ---

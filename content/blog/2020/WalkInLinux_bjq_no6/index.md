@@ -3,7 +3,7 @@ title: "走进Linux 操作系统"
 date: 2020-07-18T22:15:39+08:00
 author: "白嘉庆整理"
 keywords: ["操作系统","入门"]
-categories : ["LINUX杂谈"]
+categories : ["电子杂志"]
 banner : "img/blogimg/default.png"
 summary : "本期涉猎了操作系统的来龙去脉后与大家携手步入Linux世界。我们力图展示给大家一幅Linux系统的全景图，并为了加深对linux系统的全面认知，亲手搭建了一个能运行在内存中的试验系统。同时为大家提供了几个shell脚本帮助建立试验系统。"
 ---

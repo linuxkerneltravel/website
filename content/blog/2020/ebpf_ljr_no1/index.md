@@ -74,13 +74,16 @@ CONFIG_VXLAN=m
 
 ### 2.1.3 安装bcc
 设置好内核配置选项后，开始安装bcc，使用如下命令：
-**第一步，安装 bcc 软件包**
+**方法一，安装 bcc 软件包**
+
 ```bash
 sudo apt-get install bpfcc-tools linux-headers-$(uname -r)
 ```
 <img src="img/3.png" style="zoom:90%;" />
 
-**第二步，Ubuntu下构建依赖关系**
+**方法二：源码安装**
+
+**Ubuntu下构建依赖关系**
 
 ```bash
 sudo apt-get -y install bison build-essential cmake flex git libedit-dev \
@@ -88,7 +91,7 @@ sudo apt-get -y install bison build-essential cmake flex git libedit-dev \
 ```
 <img src="img/4.png" style="zoom:70%;" />
 
-**第三步，安装并编译bcc**
+**安装并编译bcc**
 
 ```bash
 git clone https://github.com/iovisor/bcc.git

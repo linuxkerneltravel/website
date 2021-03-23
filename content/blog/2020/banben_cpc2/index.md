@@ -1,12 +1,13 @@
-﻿---
+---
 title: "国外Linux 发布版简介"
 date: 2020-07-17T22:07:43+08:00
 author: "编辑：崔鹏程"
 keywords: ["Linux，版本"]
 categories : ["Linux杂谈"]
 banner : "img/blogimg/cpc2.jpg"
-summary : "本文简单介绍了国外流行的Linux发行版本"
+summary : "本文简单介绍了国外流行的Linux发行版本" 
 ---
+
 **国外流行的发行版本**
 
 
