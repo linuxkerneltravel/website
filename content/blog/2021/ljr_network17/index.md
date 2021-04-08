@@ -4,7 +4,7 @@ date: 2021-03-30T14:30:45+08:00
 author: "梁金荣"
 keywords: ["内核网络"]
 categories : ["内核网络"]
-banner : "img/blogimg/ljrimg6.jpg"
+banner : "img/blogimg/ljrimg16.jpg"
 summary : "本文只总结了常见的网络优化技术，并使用尽量多的图片帮助理解原理，但未深入具体去介绍原理和具体用法，目的是以后需要时可以宏观上知道该怎么去做，进而微观上深入内核来解决问题。"
 ---
 
