@@ -1,6 +1,12 @@
-# XDP基础
-
-
+---
+title: "XDP基础"
+date: 2021-04-13T10:00:45+08:00
+author: "作者：你的林皇 编辑：你的林皇"
+keywords: ["ebpf"]
+categories : ["ebpf"]
+banner : "img/blogimg/linuxer.png"
+summary : "XDP简介及基础知识。"
+---
 
 XDP，全称为**eXpress Data Path**，是Linux内核网络栈的最底层集成的数据包处理器。它只存在于RX路径上，当网络包到达内核时，XDP程序会在早期被执行 。
 
