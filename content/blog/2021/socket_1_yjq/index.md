@@ -1,3 +1,14 @@
+---
+  title: "socket 编程"
+  date: 2021-04-13T12:30:45+08:00
+  author: "作者：杨骏青"
+  keywords: ["socket"]
+  categories : ["socket"]
+  banner : img/blogimg/ljrimg18.jpg"
+  summary : "socket 网络编程相关信息。"
+   
+---
+
 #  socket 编程
 
 网络编程就是编写程序使两台联网的计算机相互交换数据。这就是全部内容了吗？是的！网络编程要比想象中的简单许多。
