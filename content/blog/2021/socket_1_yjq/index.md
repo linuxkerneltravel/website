@@ -4,7 +4,7 @@
   author: "作者：杨骏青"
   keywords: ["socket"]
   categories : ["socket"]
-  banner : img/blogimg/ljrimg18.jpg"
+  banner : "img/blogimg/ljrimg18.jpg"
   summary : "socket 网络编程相关信息。"
    
 ---
