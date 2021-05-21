@@ -79,13 +79,13 @@ paginate = 15
 [[menu.main]]
     identifier = "shipin"
     name = "内核视频"
-    url  = "https://next.xuetangx.com/course/XIYOU08091001441/1516763"
+    url  = "https://next.xuetangx.com/course/XIYOU08091001441"
     weight = 40
 
 [[menu.main]]
     identifier = "mooc"
     name = "Linux内核分析与应用"
-    url  = "https://next.xuetangx.com/course/XIYOU08091001441/1516763"
+    url  = "https://next.xuetangx.com/course/XIYOU08091001441"
     weight = 41
     parent = "shipin"
 
@@ -98,7 +98,7 @@ paginate = 15
 
 [[menu.main]]
     identifier = "video"
-    name = "分享内核视频"
+    name = "Linux内核之旅B站"
     url  = "/video/"
     weight = 43
     parent = "shipin"
