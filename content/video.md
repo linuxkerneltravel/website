@@ -27,7 +27,18 @@ Linux内核之旅社区是一个开源社区，欢迎大家将自己创作的视
 
 # 视频资源(持续更新中)
 
+- [暑期2021“大咖说开源”陈莉君：系统性能优化的路有多长](https://www.bilibili.com/video/BV12y4y1W75J)
 - [暑期2020“大咖说开源”陈莉君：Linux从入门到深入内核有多远](https://www.bilibili.com/video/BV1MC4y1Y78J)
+- [当eBPF遇上Linux内核网络](https://www.bilibili.com/video/BV1ch411U75f)
+- [基于树莓派的Linux内核学习与实践](https://www.bilibili.com/video/BV1X64y1m7WU)
+- [女神教你如何玩转一个白屏的bug](https://www.bilibili.com/video/BV1y5411w7BZ)
+- [梦想起航——自研操作系统BOOKOS之旅](https://www.bilibili.com/video/BV1XK4y1T7Q7)
+- [使用BPF进行性能追踪__BPF前世今生+为什么你会爱上它](https://www.bilibili.com/video/BV1mv411h7NU)
+- [使用BPF进行行性能追踪__学习路线+应用案例](https://www.bilibili.com/video/BV1kV411v7GX)
+- [BPF C编程入门](https://www.bilibili.com/video/BV1f54y1h74r)
+- [高效入门eBPF](https://www.bilibili.com/video/BV1LX4y157Gp)
+- [吴峰光老师全栈式开源软件 CI 测试平台分享会](https://www.bilibili.com/video/BV12h411y7dj)
+- [深入浅出串讲操作系统](https://www.bilibili.com/video/BV1Pa4y1e72U)
 - [打印进程的虚拟地址空间](https://www.bilibili.com/video/BV1Ua4y1x7sU?p=1)
 - [段页式虚拟内存管理](https://www.bilibili.com/video/BV1Ua4y1x7sU?p=2)
 - [mmap使用与性能优化](https://www.bilibili.com/video/BV1Ua4y1x7sU?p=3)
