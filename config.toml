@@ -71,12 +71,6 @@ paginate = 15
     parent = "blog"
 
 [[menu.main]]
-    identifier = "github"
-    name = "github"
-    url  = "https://github.com/linuxkerneltravel"
-    weight = 30
-
-[[menu.main]]
     identifier = "shipin"
     name = "内核视频"
     url  = "https://next.xuetangx.com/course/XIYOU08091001441"
@@ -142,10 +136,10 @@ paginate = 15
     weight = 72
 
 [[menu.main]]
-    identifier = "oldWeb"
-    name = "原网站"
-    url  = "http://wwww.kerneltravel.net/"
-    weight = 90
+    identifier = "github"
+    name = "github"
+    url  = "https://github.com/linuxkerneltravel"
+    weight = 80
 
 [[menu.main]]
     identifier = "contact"
