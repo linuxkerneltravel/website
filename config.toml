@@ -77,31 +77,45 @@ paginate = 15
     weight = 40
 
 [[menu.main]]
-    identifier = "mooc"
+    identifier = "mooc_kernel"
     name = "Linux内核分析与应用"
     url  = "https://next.xuetangx.com/course/XIYOU08091001441"
     weight = 41
     parent = "shipin"
 
 [[menu.main]]
+    identifier = "mooc_os"
+    name = "操作系统及Linux内核"
+    url  = "https://www.icourse163.org/course/0809XIYOU023-1461809182"
+    weight = 42
+    parent = "shipin"
+
+[[menu.main]]
+    identifier = "mooc_coding"
+    name = "Linux编程技术"
+    url  = "https://www.icourse163.org/course/XIYOU-1461794181"
+    weight = 43
+    parent = "shipin"
+
+[[menu.main]]
     identifier = "movie"
     name = "陈老师课堂"
     url  = "/movie/"
-    weight = 42
+    weight = 44
     parent = "shipin"
 
 [[menu.main]]
     identifier = "video"
     name = "Linux内核之旅B站"
     url  = "/video/"
-    weight = 43
+    weight = 45
     parent = "shipin"
 
 [[menu.main]]
     identifier = "lecture"
     name = "陈老师讲座"
     url  = "https://www.bilibili.com/video/BV1MC4y1Y78J"
-    weight = 44
+    weight = 46
     parent = "shipin"
 
 [[menu.main]]
