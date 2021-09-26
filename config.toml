@@ -10,6 +10,7 @@ defaultContentLanguage = "zh"
 pygmentsUseClasses = false
 pygmentCodeFences = true
 
+
 [Permalinks]
     # blog = "/blog/:year/:month/:day/:filename/"
     blog = "/blog/:year/:filename/"
@@ -38,45 +39,83 @@ paginate = 15
     name = "博客"
     url  = "/blog/"
     weight = 20
-
 [[menu.main]]
-    identifier = "github"
-    name = "github"
-    url  = "https://github.com/linuxkerneltravel"
-    weight = 30
+    identifier="allblog"
+    name = "所有博客"
+    url  = "/blog/"
+    weight = 21
+    parent = "blog"  
+[[menu.main]]
+    identifier="beginner"
+    name = "新手上路"
+    url  = "http://kerneltravel.net/categories/%E6%96%B0%E6%89%8B%E4%B8%8A%E8%B7%AF/"
+    weight = 22
+    parent = "blog"     
+[[menu.main]]
+    identifier="kernel"
+    name = "走进内核"
+    url  = "http://kerneltravel.net/categories/%E8%B5%B0%E8%BF%9B%E5%86%85%E6%A0%B8/"
+    weight = 23
+    parent = "blog"    
+[[menu.main]]
+    identifier="experience"
+    name = "经验交流"
+    url  = "http://kerneltravel.net/categories/%E7%BB%8F%E9%AA%8C%E4%BA%A4%E6%B5%81/"
+    weight = 24
+    parent = "blog"    
+[[menu.main]]
+    identifier="magzeine"
+    name = "电子杂志"
+    url  = "http://kerneltravel.net/categories/%E7%94%B5%E5%AD%90%E6%9D%82%E5%BF%97/"
+    weight = 25
+    parent = "blog"
 
 [[menu.main]]
     identifier = "shipin"
     name = "内核视频"
-    url  = "https://next.xuetangx.com/course/XIYOU08091001441/1516763"
+    url  = "https://next.xuetangx.com/course/XIYOU08091001441"
     weight = 40
 
 [[menu.main]]
-    identifier = "mooc"
+    identifier = "mooc_kernel"
     name = "Linux内核分析与应用"
-    url  = "https://next.xuetangx.com/course/XIYOU08091001441/1516763"
+    url  = "https://next.xuetangx.com/course/XIYOU08091001441"
     weight = 41
+    parent = "shipin"
+
+[[menu.main]]
+    identifier = "mooc_os"
+    name = "操作系统及Linux内核"
+    url  = "https://www.icourse163.org/course/0809XIYOU023-1461809182"
+    weight = 42
+    parent = "shipin"
+
+[[menu.main]]
+    identifier = "mooc_coding"
+    name = "Linux编程技术"
+    url  = "https://www.icourse163.org/course/XIYOU-1461794181"
+    weight = 43
     parent = "shipin"
 
 [[menu.main]]
     identifier = "movie"
     name = "陈老师课堂"
     url  = "/movie/"
-    weight = 42
+    weight = 44
     parent = "shipin"
 
 [[menu.main]]
     identifier = "video"
-    name = "分享内核视频"
+    name = "Linux内核之旅B站"
     url  = "/video/"
-    weight = 43
+    weight = 45
     parent = "shipin"
 
 [[menu.main]]
     identifier = "lecture"
     name = "陈老师讲座"
     url  = "https://www.bilibili.com/video/BV1MC4y1Y78J"
-    weight = 44
+    weight = 46
     parent = "shipin"
 
 [[menu.main]]
@@ -90,12 +129,6 @@ paginate = 15
     name = "实验楼"
     url  = "https://www.shiyanlou.com/courses/2610"
     weight = 51
-
-[[menu.main]]
-    identifier="magzeine"
-    name = "电子杂志"
-    url  = "/magazine/"
-    weight = 60
 
 [[menu.main]]
     identifier="bookss"
@@ -117,10 +150,10 @@ paginate = 15
     weight = 72
 
 [[menu.main]]
-    identifier = "oldWeb"
-    name = "原网站"
-    url  = "http://wwww.kerneltravel.net/"
-    weight = 90
+    identifier = "github"
+    name = "github"
+    url  = "https://github.com/linuxkerneltravel"
+    weight = 80
 
 [[menu.main]]
     identifier = "contact"
@@ -199,6 +232,12 @@ paginate = 15
     logo = "img/logo.png"
     logo_small = "img/logo-small.png"
 
+    # avatar used for thumbnail on sharing
+    # avatar = "/img/logo.png"
+    address = """<p><a href='https://synestiaos.org'>SynestiaOS</p>"""
+
+	# 是否开启评论功能
+	gitalk = true
 
 # Enable or disable top bar with social icons
 [params.topbar]
@@ -240,7 +279,7 @@ paginate = 15
     icon = "far fa-file-alt"
     title = "和我一起学习Linux内核吧！"
     subtitle = "你可以在我们的GitHub上提交你的代码，也可以给我们的代码打补丁，在学堂在线mooc平台《Linux内核分析与应用》课程中抛出你的问题，就有机会获得陈莉君教授的答疑。 "
-    link_url = "https://next.xuetangx.com/course/XIYOU08091001441/1516763"
+    link_url = "https://next.xuetangx.com/course/XIYOU08091001441"
     link_text = "免费报名《Linux内核分析与应用》课程"
 
 [params.clients]

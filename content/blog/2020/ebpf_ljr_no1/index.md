@@ -74,40 +74,58 @@ CONFIG_VXLAN=m
 
 ### 2.1.3 安装bcc
 设置好内核配置选项后，开始安装bcc，使用如下命令：
-**第一步，安装 bcc 软件包**
+**方法一，安装 bcc 软件包**
+
 ```bash
 sudo apt-get install bpfcc-tools linux-headers-$(uname -r)
 ```
 <img src="img/3.png" style="zoom:90%;" />
 
-**第二步，Ubuntu下构建依赖关系**
+**方法二：源码安装**
+
+**Ubuntu下构建依赖关系**
 
 ```bash
-sudo apt-get -y install bison build-essential cmake flex git libedit-dev \
-  libllvm6.0 llvm-6.0-dev libclang-6.0-dev python zlib1g-dev libelf-dev
-```
-<img src="img/4.png" style="zoom:70%;" />
+# Trusty (14.04 LTS) and older
+VER=trusty
+echo "deb http://llvm.org/apt/$VER/ llvm-toolchain-$VER-3.7 main
+deb-src http://llvm.org/apt/$VER/ llvm-toolchain-$VER-3.7 main" | \
+  sudo tee /etc/apt/sources.list.d/llvm.list
+wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key | sudo apt-key add -
+sudo apt-get update
 
-**第三步，安装并编译bcc**
+# For Bionic (18.04 LTS)
+sudo apt-get -y install bison build-essential cmake flex git libedit-dev \
+  libllvm6.0 llvm-6.0-dev libclang-6.0-dev python zlib1g-dev libelf-dev libfl-dev
+
+# For Eoan (19.10) or Focal (20.04.1 LTS)
+sudo apt install -y bison build-essential cmake flex git libedit-dev \
+  libllvm7 llvm-7-dev libclang-7-dev python zlib1g-dev libelf-dev libfl-dev
+
+# For other versions
+sudo apt-get -y install bison build-essential cmake flex git libedit-dev \
+  libllvm3.7 llvm-3.7-dev libclang-3.7-dev python zlib1g-dev libelf-dev
+
+# For Lua support
+sudo apt-get -y install luajit luajit-5.1-dev
+```
+
+**安装并编译bcc**
 
 ```bash
 git clone https://github.com/iovisor/bcc.git
 mkdir bcc/build; cd bcc/build
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-```
-<img src="img/5.png" style="zoom:90%;" />
-
-```bash
+cmake ..
 make
-```
-<img src="img/6.png" style="zoom:100%;" />
-
-```bash
 sudo make install
+cmake -DPYTHON_CMD=python3 .. # build python3 binding
+pushd src/python/
+make
+sudo make install
+popd
 ```
-<img src="img/7.png" style="zoom:100%;" />
 
-到此，eBPF & bcc 已经安装完成。
+到此，eBPF & bcc 环境已经安装完成。
 
 ## 2.2 Hello World
 下面介绍一个简单的例子，代码如下：
