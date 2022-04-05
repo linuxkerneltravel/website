@@ -70,53 +70,49 @@ paginate = 15
     weight = 25
     parent = "blog"
 
-[[menu.main]]
-    identifier = "shipin"
-    name = "内核视频"
-    url  = "https://next.xuetangx.com/course/XIYOU08091001441"
-    weight = 40
+#[[menu.main]]
+#    identifier = "shipin"
+#    name = "内核视频"
+#    url  = "https://next.xuetangx.com/course/XIYOU08091001441"
+#    weight = 40
 
 [[menu.main]]
     identifier = "mooc_kernel"
     name = "Linux内核分析与应用"
     url  = "https://next.xuetangx.com/course/XIYOU08091001441"
     weight = 41
-    parent = "shipin"
-
+    parent = "bookss"
 [[menu.main]]
     identifier = "mooc_os"
     name = "操作系统及Linux内核"
     url  = "https://www.icourse163.org/course/0809XIYOU023-1461809182"
     weight = 42
-    parent = "shipin"
-
+    parent = "bookss"
 [[menu.main]]
     identifier = "mooc_coding"
     name = "Linux编程技术"
     url  = "https://www.icourse163.org/course/XIYOU-1461794181"
     weight = 43
-    parent = "shipin"
-
+    parent = "bookss"
 [[menu.main]]
     identifier = "movie"
     name = "陈老师讲内核"
     url  = "/movie/"
     weight = 44
-    parent = "shipin"
-
+    parent = "bookss"
 [[menu.main]]
     identifier = "video"
     name = "Linux内核之旅B站"
     url  = "/video/"
     weight = 45
-    parent = "shipin"
+    parent = "bookss"
 
 [[menu.main]]
     identifier = "lecture"
     name = "陈老师讲座"
     url  = "https://www.bilibili.com/video/BV1MC4y1Y78J"
     weight = 46
-    parent = "shipin"
+    parent = "bookss"
 
 [[menu.main]]
     identifier="project"
@@ -128,11 +124,12 @@ paginate = 15
     identifier = "experiment"
     name = "实验楼"
     url  = "https://www.shiyanlou.com/courses/2610"
+    parent = "bookss"
     weight = 51
 
 [[menu.main]]
     identifier="bookss"
-    name = "陈老师著作"
+    name = "内核资料"
     weight = 70
 
 [[menu.main]]
@@ -272,10 +269,10 @@ paginate = 15
     # at 'exampleSite/data/testimonials'.
     # For more informtion take a look at the README.
     title = "Linux内核之旅开源项目贡献者"
-    subtitle = "Linux内核之旅致力于传播开源文化，教授和传播Linux内核知识。目前我们有五大平台，包括Linux内核之旅网站、GitHub、微信公众号“Linux内核之旅”、学堂在线mooc和bilibili内核视频站。以下为部分社区成员："
+    subtitle = "Linux内核之旅致力于传播开源文化，教授和传播Linux内核知识。目前我们有五大平台，包括Linux内核之旅网站、GitHub、微信公众号“Linux内核之旅”、学堂在线mooc和bilibili内核视频站。以下为Linux内核之旅主要贡献者："
 
 [params.see_more]
-    enable = true
+    enable = false
     icon = "far fa-file-alt"
     title = "和我一起学习Linux内核吧！"
     subtitle = "你可以在我们的GitHub上提交你的代码，也可以给我们的代码打补丁，在学堂在线mooc平台《Linux内核分析与应用》中抛出你的问题，就有机会获得陈莉君教授的答疑。 "
